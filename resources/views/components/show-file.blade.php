@@ -25,9 +25,9 @@
                 <div class="mx-2 my-2"></div>
 
                 <div class="col-sm-5 section-5-box wow fadeInUp border border-primary">
-                    <h3>
+                    
                         {!! $doc->$carrer->description !!} 
-                    </h3>
+                    
                     <p> <strong>Autores: </strong> {{ $doc->$carrer->authors }}.</p>
                     <p> <strong>Carrera: </strong>Ingenería {{ $doc->carrer }} </p>
                     <p> <strong>Modalidad: </strong> {{ ucfirst($doc->$carrer->category) }} </p>

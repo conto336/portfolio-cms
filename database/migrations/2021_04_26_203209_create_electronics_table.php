@@ -15,10 +15,10 @@ class CreateElectronicsTable extends Migration
     {
         Schema::create('electronics', function (Blueprint $table) {
             $table->id();
-            $table->text('url')->unique();
+            $table->string('url')->unique();
             $table->string('category', 25);
             $table->string('authors')->unique();
-            $table->text('description')->unique();
+            $table->text('description');
             $table->text('line');
             $table->string('size', 12);
 
