@@ -221,7 +221,7 @@
         bottom: 15px;
         background-color: chartreuse;
     }
-
+/*
     input[type=file]::file-selector-button {
         border: 2px solid #6c5ce7;
         margin-left: -0.5em;
@@ -230,7 +230,7 @@
         margin-top: -5px;
         transition: 1s;
     }
-
+*/
     #ui-datepicker-div {
         font-size: 12px;
     }
