@@ -11,16 +11,17 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.css')}}">
+    <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/css/custom/jquery.mCustomScrollbar.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/css/custom/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/css/custom/style.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/css/custom/media-queries.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/css/loader.css') }}">
     @yield('css')
     <!-- Favicon and touch icons -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="icon" sizes="189x256" href="{{ asset('favicon.ico') }}">
-
+    <x-loader />
 </head>
 
 <body>
@@ -90,7 +91,7 @@
 
         <!-- Content -->
         <div class="content">
-            
+
             {{-- <!-- open sidebar menu -->
 				<a class="btn btn-primary btn-customized open-menu" href="#" role="button">
                     <i class="fas fa-align-left"></i> <span>Menu</span>
@@ -126,9 +127,9 @@
     <!-- Javascript -->
     <script src="{{ asset('vendor/js/custom/jquery-3.3.1.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     {{-- <script src="{{ asset('vendor/js/custom/jquery-migrate-3.0.0.min.js') }}"></script> --}}
     <script src="{{ asset('vendor/js/custom/jquery.backstretch.min.js') }}"></script>
@@ -136,7 +137,7 @@
     <script src="{{ asset('vendor/js/custom/jquery.waypoints.min.js') }}"></script>
     <script src="{{ asset('vendor/js/custom/jquery.mCustomScrollbar.concat.min.js') }}"></script>
     <script src="{{ asset('vendor/js/custom/scripts.js') }}"></script>
-  
+    <script src="{{ asset('vendor/js/loader.js') }}"></script>
     @yield('js')
 </body>
 

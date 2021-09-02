@@ -1,6 +1,20 @@
 <x-home>
     @section('title', 'Repositorio del departamento de tecnológia')
+    @section('css')
+        <style>
+            .btn-link:hover {
+                color: #0056b3;
+                text-decoration: none !important;
+            }
 
+            .btn-link.focus,
+            .btn-link:focus {
+                text-decoration: none;
+                box-shadow: none;
+            }
+
+        </style>
+    @endsection
     <!-- Top content -->
     <div class="top-content section-container" id="top-content">
         <div class="container">
@@ -58,8 +72,8 @@
                     </div> --}}
                     <br>
                     <p>
-                        <a class="btn btn-primary btn-customized" data-toggle="collapse" href="#lines"
-                            role="button" aria-expanded="false" aria-controls="lines"> <i class="fas fa-chart-line"></i>
+                        <a class="btn btn-primary btn-customized" data-toggle="collapse" href="#lines" role="button"
+                            aria-expanded="false" aria-controls="lines"> <i class="fas fa-chart-line"></i>
                             Líneas de investigación
                         </a>
                     </p>
