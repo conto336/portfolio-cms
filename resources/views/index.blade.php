@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    <!-- Section 5 -->
+    {{-- <!-- Section 5 -->
     <div class="section-5-container section-container" id="section-5">
         <div class="container">
         
@@ -108,7 +108,7 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Section 2 -->
     <div class="section-2-container section-container section-container-gray-bg" id="section-2">
