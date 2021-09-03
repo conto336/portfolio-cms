@@ -35,6 +35,10 @@
                 @endforeach
             </div>
 
+            <div class="my-3">
+                {{ $docs->links() }}
+            </div>
+            
         </div>
     @else
         <div class="container">

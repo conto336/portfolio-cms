@@ -40,7 +40,7 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('show/files/indust
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('upload/files',  [DocumentController::class, 'create'])
     ->name('admin.file-upload');
 
-Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('edit/files/id={id}',  [DocumentController::class, 'edit'])
+Route::middleware(['auth:sanctum', 'verified', 'admin'])->get('edit/files/id={id}&name={name}',  [DocumentController::class, 'edit'])
     ->name('admin.file-edit');
 
 Route::put('update/file_={doc}', [DocumentController::class, 'update'])

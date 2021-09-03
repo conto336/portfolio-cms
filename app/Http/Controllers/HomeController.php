@@ -7,6 +7,7 @@ use App\Models\Electronic;
 use App\Models\Geology;
 use App\Models\Industrial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use PhpParser\Comment\Doc;
 
@@ -16,22 +17,27 @@ class HomeController extends Controller
     {
 
         if ($request->input('query')) {
+
             $name = $request->input('query');
 
-            $query = Document::where('name', 'LIKE', '%' . $name . '%')->get();
+            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
+                ->get();
+
             return view('filter', compact('query', 'name'));
         }
 
-        $totalDocs = Document::all()->count();
-        return view('index', compact('totalDocs'));
+        return view('index');
     }
 
     public function show($name, $id, Request $request)
     {
         if ($request->input('query')) {
+
             $name = $request->input('query');
 
-            $query = Document::where('name', 'LIKE', '%' . $name . '%')->get();
+            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
+                ->get();
+
             return view('filter', compact('query', 'name'));
         }
 
@@ -58,9 +64,12 @@ class HomeController extends Controller
     public function homeLibrary(Request $request)
     {
         if ($request->input('query')) {
+
             $name = $request->input('query');
 
-            $query = Document::where('name', 'LIKE', '%' . $name . '%')->get();
+            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
+                ->get();
+
             return view('filter', compact('query', 'name'));
         }
 
@@ -71,13 +80,16 @@ class HomeController extends Controller
     public function electronicFiles(Request $request)
     {
         if ($request->input('query')) {
+
             $name = $request->input('query');
 
-            $query = Document::where('name', 'LIKE', '%' . $name . '%')->get();
+            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
+                ->get();
+
             return view('filter', compact('query', 'name'));
         }
 
-        $docs = Document::where('carrer', 'Electrónica')->get();
+        $docs = Document::where('carrer', 'Electrónica')->paginate(4);
 
         return view('library.electronica.files', compact('docs'));
     }
@@ -88,13 +100,16 @@ class HomeController extends Controller
     public function industrialFiles(Request $request)
     {
         if ($request->input('query')) {
+
             $name = $request->input('query');
 
-            $query = Document::where('name', 'LIKE', '%' . $name . '%')->get();
+            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
+                ->get();
+
             return view('filter', compact('query', 'name'));
         }
 
-        $docs = Document::where('carrer', 'Industrial')->get();
+        $docs = Document::where('carrer', 'Industrial')->paginate(4);
 
         return view('library.industrial.files', compact('docs'));
     }
@@ -106,13 +121,16 @@ class HomeController extends Controller
     public function geologyFiles(Request $request)
     {
         if ($request->input('query')) {
+
             $name = $request->input('query');
 
-            $query = Document::where('name', 'LIKE', '%' . $name . '%')->get();
+            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
+                ->get();
+
             return view('filter', compact('query', 'name'));
         }
 
-        $docs = Document::where('carrer', 'Geologica')->get();
+        $docs = Document::where('carrer', 'Geologica')->paginate(4);
 
         return view('library.geologia.files', compact('docs'));
     }

@@ -1,15 +1,16 @@
 <x-render-files-library>
     @section('title', 'Documentos de Ingeniería Electrónica')
-  
-    @section('css')  
-      <style>
-        .text-truncate {
-          white-space: nowrap; 
-          width: 100%; 
-          overflow: hidden;
-          text-overflow: ellipsis; 
-          }
-      </style>
+
+    @section('css')
+        <style>
+            .text-truncate {
+                white-space: nowrap;
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+        </style>
     @endsection
 
     <x-slot name="title">
@@ -28,10 +29,11 @@
                                 </h6>
                                 <div class="divider-1 wow fadeInUp"><span></span></div>
                                 <p class="card-text col-2">
-                                    <div class="text-truncate">
-                                      {!! $doc->electronica->description !!} ... 
-                                      <a class="text-dark" href="{{ route('showFile', [ $doc->name, $doc->id ]) }}">Lea más</a>
-                                    </div>
+                                <div class="text-truncate">
+                                    {!! $doc->electronica->description !!} ...
+                                    <a class="text-dark"
+                                        href="{{ route('showFile', [$doc->name, $doc->id]) }}">Lea más</a>
+                                </div>
                                 </p>
 
                             </div>
@@ -50,6 +52,10 @@
             </div>
 
         </div>
+        <div class="my-3">
+            {{ $docs->links() }}
+        </div>
+
     @else
         <div class="container">
             <div class="my-3 mx-auto">
@@ -59,5 +65,6 @@
             </div>
         </div>
     @endif
+
 
 </x-render-files-library>

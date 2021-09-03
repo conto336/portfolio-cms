@@ -127,7 +127,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class=" fas fa-calendar-alt"></i></span>
                     </div>
-                    <input type="text" class="date-own form-control form-control" name="date" id="date"
+                    <input type="text" class="date-own form-control form-control" name="date" id="date" autocomplete="off"
                         placeholder="Ingresa el año .." aria-label="Year" required />
                 </div>
                 @error('date')
@@ -222,15 +222,6 @@
         background-color: chartreuse;
     }
 
-    input[type=file]::file-selector-button {
-        border: 2px solid #6c5ce7;
-        margin-left: -0.5em;
-        border-radius: .2em;
-        background-color: #a29bfe;
-        margin-top: -5px;
-        transition: 1s;
-    }
-
     #ui-datepicker-div {
         font-size: 12px;
     }
@@ -257,7 +248,7 @@
             changeMonth: true,
             changeYear: true,
             dateFormat: 'd M, yy',
-            showButtonPanel: true,
+            //showButtonPanel: true,
         });
     });
 </script>

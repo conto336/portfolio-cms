@@ -25,8 +25,8 @@
             overflow: hidden !important;
             vertical-align: middle !important;
             /* 
-                    word-wrap: break-word !important;
-                    max-width: 400px; */
+                        word-wrap: break-word !important;
+                        max-width: 400px; */
         }
 
         #electronic td {
@@ -74,7 +74,8 @@
                         <tr>
                             <td>
                                 <p class="text-mute text-justify">
-                                    <img class="head" src="{{ asset('images/files.svg') }}" alt="file" width="30" />
+                                    <img class="head" src="{{ asset('images/files.svg') }}" alt="file"
+                                        width="30" />
                                     &nbsp;
                                     {{ $electronica->document->name }}
                                 </p>
@@ -88,7 +89,9 @@
                             <td>
                                 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                     <div class="btn-group mx-auto" role="group" aria-label="First group">
-                                        <form action="{{ route('admin.file-edit', $electronica->id) }}" method="GET">
+                                        <form
+                                            action="{{ route('admin.file-edit', [$electronica->id, $electronica->document->name]) }}"
+                                            method="GET">
                                             <button type="submit" class="btn btn-primary btn-sm"><i
                                                     class="fas fa-edit"></i></button>
                                         </form>
@@ -244,6 +247,5 @@
             actions("#tableElectronica");
             table('#electronic');
         });
-
     </script>
 @stop

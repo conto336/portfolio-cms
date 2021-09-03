@@ -79,6 +79,7 @@ class DocumentController extends Controller
             'carrer' => $request->carrer,
             'type' => $request->file('file')->extension(),
             'date' => $request->date,
+            'keywords' => $request->name . ',' . $request->carrer . ',' . $request->category . ',' . $request->authors . ',' . $request->line,
         ]);
 
         if ($request->carrer === 'Electrónica') {
@@ -139,15 +140,15 @@ class DocumentController extends Controller
         $doc = $id;
 
         if ($doc->electronica) {
-            $carrer = $doc->electronica;
+            $carrer = 'electronica';
             return view('admin.docs.file-edit', compact('doc', 'carrer'));
         }
         if ($doc->industrial) {
-            $carrer = $doc->industrial;
+            $carrer = 'industrial';
             return view('admin.docs.file-edit', compact('doc', 'carrer'));
         }
         if ($doc->geologia) {
-            $carrer = $doc->geologia;
+            $carrer = 'geologia';
             return view('admin.docs.file-edit', compact('doc', 'carrer'));
         }
 

@@ -24,6 +24,21 @@
                 <form action="{{ route('admin.update-file', $doc) }}" method="POST">
                     @csrf
                     @method('PUT')
+
+                    <div class="form-group">
+                        <label for="name">Autores:</label>
+                        <input type="text" class="form-control" name="authors" id="authors"
+                            placeholder="Ingrese los autores ..." value="{{ $doc->$carrer->authors }}">
+                    </div>
+                    @error('name')
+                        <div class="alert alert-danger alert-dismissible fade show mt-2 text-center" role="alert">
+                            <strong>Oops! something went wrong</strong><br> {{ $message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @enderror
+
                     <div class="form-group">
                         <label for="name">Nuevo nombre:</label>
                         <input type="text" class="form-control" name="name" id="name"
@@ -41,11 +56,12 @@
                     <div class="form-group">
                         <label>Actual descripción:</label>
                         <div class="text-bold text-info">
-                            {!! $carrer->description !!}
+                            {!! $doc->$carrer->description !!}
                         </div>
                         <hr />
                         <label>Nueva descripción: </label>
-                        <textarea class="form-control rounded-0" id="description" name="description" rows="5">{!! $carrer->description !!}</textarea>
+                        <textarea class="form-control rounded-0" id="description" name="description"
+                            rows="5">{!! $doc->$carrer->description !!}</textarea>
                     </div>
                     @error('description')
                         <div class="alert alert-danger alert-dismissible fade show mt-2 text-center" role="alert">
@@ -89,7 +105,6 @@
             width: '100%',
             height: 200,
         });
-
     </script>
 
 @stop

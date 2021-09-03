@@ -36,6 +36,11 @@
             </div>
 
         </div>
+
+        <div class="my-3">
+            {{ $docs->links() }}
+        </div>
+        
     @else
         <div class="container">
             <div class="my-3 mx-auto">

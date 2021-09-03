@@ -85,12 +85,12 @@
                     <td>
                         <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                             <div class="btn-group mx-auto" role="group" aria-label="First group">
-                                <form action="{{ route('admin.file-edit', $geologia) }}" method="GET">
+                                <form action="{{ route('admin.file-edit', [$geologia->document->id, $geologia->document->name]) }}" method="GET">
                                     <button type="submit" class="btn btn-primary btn-sm"><i
                                             class="fas fa-edit"></i></button>
                                 </form>
                                 <div class="mx-1"></div>
-                                <form action="{{ route('admin.deleteFile', $geologia) }}" method="POST">
+                                <form action="{{ route('admin.deleteFile', $geologia->document->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm"><i
