@@ -20,7 +20,7 @@ class CreateDocumentsTable extends Migration
             $table->string('carrer', 25);
             $table->string('type');
             $table->string('date');
-            $table->text('keywords')->unique();
+            $table->text('keywords');
             $table->timestamps();
         });
     }
