@@ -1,6 +1,19 @@
 <x-render-files-library>
     @section('title', 'Documentos de Ingeniería Geologíca')
 
+
+    @section('css')
+        <style>
+            .text-truncate {
+                white-space: nowrap;
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+        </style>
+    @endsection
+
     <x-slot name="title">
         Ingenería Geologíca
     </x-slot>
@@ -17,7 +30,11 @@
                                 </h6>
                                 <div class="divider-1 wow fadeInUp"><span></span></div>
                                 <p class="card-text">
-                                    {!! $doc->geologia->description !!}
+                                    <div class="text-truncate">
+                                        {!! $doc->geologia->description !!} ...
+                                        <a class="text-dark"
+                                            href="{{ route('showFile', [$doc->name, $doc->id]) }}">Lea más</a>
+                                    </div>
                                 </p>
 
                             </div>

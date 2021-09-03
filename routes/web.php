@@ -26,7 +26,6 @@ Route::get('carreras/', [HomeController::class, 'homeLibrary'])->name('library')
 
 /**Rutas del ELectronica */
 Route::get('documents/carrera/ingenieria electronica/', [HomeController::class, 'electronicFiles'])->name('electronicFiles');
-Route::get('documents/carrera/ingenieria electronica/{nombre}&{id}', [HomeController::class, 'show'])->name('showFile');
 
 /**Rutas de Industrial */
 Route::get('documents/carrera/ingenieria industrial/', [HomeController::class, 'industrialFiles'])->name('industrialFiles');
@@ -34,3 +33,4 @@ Route::get('documents/carrera/ingenieria industrial/', [HomeController::class, '
 /**Rutas de Geologia */
 Route::get('documents/carrera/ingenieria geologica/', [HomeController::class, 'geologyFiles'])->name('geologyFiles');
 
+Route::get('documents/{nombre}&{id}', [HomeController::class, 'show'])->name('showFile');
