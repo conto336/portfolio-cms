@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/css/custom/style.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/css/custom/media-queries.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/css/loader.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/css/table_wiki.css') }}">
     @yield('css')
     <!-- Favicon and touch icons -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">

@@ -141,7 +141,7 @@
 
             <div class="row">
                 <div class="col section-3 section-description wow fadeIn">
-                    <h2>Docentes</h2>
+                    <h2>Autoridades</h2>
                     <div class="divider-1 wow fadeInUp"><span></span></div>
                 </div>
             </div>
@@ -165,7 +165,7 @@
                         <div class="col-md-9">
                             <h3>MSc. Milciades Delgadillo</h3>
                             <p>
-                                <strong>Coordinador de Ingeniería Electrónica.</strong>
+                                <strong>Coordinador de Ingeniería Electrónica </strong> <i class="fas fa-microchip"></i>
                             </p>
                         </div>
                         <div class="col-md-3">
@@ -184,7 +184,7 @@
                         <div class="col-md-9">
                             <h3>MSc. Sergio Ramirez</h3>
                             <p>
-                                <strong>Coordinador de Ingeniería Industrial.</strong>
+                                <strong>Coordinador de Ingeniería Industrial</strong> <i class="fas fa-industry"></i>
                             </p>
                         </div>
                     </div>
@@ -194,7 +194,7 @@
                         <div class="col-md-9">
                             <h3>MSc. Francisco</h3>
                             <p>
-                                <strong>Coordinador de Ingeniería Geológia.</strong>
+                                <strong>Coordinador de Ingeniería Geológia</strong> <i class="fas fa-dice-d20"></i>
                             </p>
                         </div>
                         <div class="col-md-3">
