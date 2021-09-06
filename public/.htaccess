@@ -6,9 +6,15 @@
     RewriteEngine On
 
     # Si  NO  está accediendo a este dominio
+<<<<<<< HEAD
     RewriteCond %{HTTP_HOST} !^(?:www\.)?repositorio-deptecnologia\.com$ [NC]
     # Mostrarle un 403 Forbidden
     RewriteRule "" - [F]
+=======
+#    RewriteCond %{HTTP_HOST} !^(?:www\.)?repositorio-deptecnologia\.com$ [NC]
+    # Mostrarle un 403 Forbidden
+#    RewriteRule "" - [F]
+>>>>>>> 261445b26690cf8131ee3ce0ccda0883ee5f313d
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
