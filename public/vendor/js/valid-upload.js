@@ -7,8 +7,7 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
             },
             buttonsStyling: false,
         });
-        if ((document.getElementById(file).files.length === 0) && (document.getElementById(name)
-                .value === "")) {
+        if ((document.getElementById(file).files.length === 0)) {
             e.preventDefault();
             Swal.fire(
                 'Error',
@@ -27,7 +26,7 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
             e.preventDefault();
             Swal.fire(
                 'Error',
-                'Ingresa un nombre',
+                'Ingresa el nombre del archivo',
                 'warning'
             )
             document.getElementById(name).classList.add("is-invalid");
@@ -89,6 +88,9 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
         const maxFileSizeTexContent = document.getElementById(maxFileSize).textContent;
         const maxData = Number.parseInt(maxFileSizeTexContent, 10);
         const fileReader = new FileReader();
+
+        document.getElementById('filename').innerHTML = '1 archivo';
+
         fileReader.readAsDataURL(data);
         if (size > maxData) {
             Swal.fire(
@@ -114,12 +116,14 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
                 e.total);
             document.getElementById(progress).innerHTML = "100%";
         });
+        document.getElementById(progress).innerHTML = "100%";
     });
 
     document.getElementById(reset).addEventListener("click", () => {
 
         document.getElementById(progress).value = 0;
         document.getElementById(btn).disabled = false;
+        document.getElementById('filename').innerHTML = 'choose file';
         if (
             document.getElementById(file).classList.contains("is-valid") ||
             document.getElementById(file).classList.contains("is-invalid") ||

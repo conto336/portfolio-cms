@@ -43,33 +43,14 @@
     </div>
 
     <!-- Section 5 -->
+    {{-- 
     <div class="section-5-container section-container" id="section-5">
         <div class="container">
             <div class="row">
                 <div class="col section-5 section-description wow fadeIn">
                     <h2>Recursos</h2>
                     <div class="divider-1 wow fadeInUp"><span></span></div>
-                    {{-- Adiciones extras --}}
-                    {{-- <p>
-                        <a class="btn btn-primary btn-customized scroll-link" data-toggle="collapse" href="#lastAdition"
-                            role="button" aria-expanded="false" aria-controls="lastAdition"> <i
-                                class="fas fa-list-alt"></i>
-                            Últimas adiciones
-                        </a>
-                    </p>
-                    <div class="collapse" id="lastAdition">
-                        <div class="card card-body">
 
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Morbi leo risus</li>
-                                <li class="list-group-item">Porta ac consectetur ac</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                            </ul>
-
-                        </div>
-                    </div> --}}
                     <br>
                     <p>
                         <a class="btn btn-primary btn-customized" data-toggle="collapse" href="#lines" role="button"
@@ -155,7 +136,6 @@
 
                         </div>
                     </div>
-                    {{-- Adiciones extras --}}
 
                 </div>
 
@@ -163,7 +143,7 @@
         </div>
     </div>
 
-
+ --}}
     <!-- Section 1 -->
     <div class="section-1-container section-container" id="section-1">
         <div class="container">
