@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('register', function (){ abort(404); });
+
 
 Route::get('about', [HomeController::class, 'about'])->name('about');
 
@@ -34,3 +34,4 @@ Route::get('carrera/ingenieria industrial/', [HomeController::class, 'industrial
 Route::get('carrera/ingenieria geologica/', [HomeController::class, 'geologyFiles'])->name('geologyFiles');
 
 Route::get('archivos/{nombre}&{id}', [HomeController::class, 'show'])->name('showFile');
+
