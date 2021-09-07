@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://www.repositorio-deptecnologiaunan.com/'),
+    'url' => env('APP_URL', ''),
 
     'asset_url' => env('ASSET_URL', null),
 

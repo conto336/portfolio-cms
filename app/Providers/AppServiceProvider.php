@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (App::environment(['staging', 'production'])) {
+ /*        if (App::environment(['staging', 'production'])) {
             URL::forceScheme('https');
         }
 
@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
 
         if (env('APP_FORCE_HTTPS', false)) {
             URL::forceScheme('https');
-        }
+        } */
 
         Paginator::useBootstrap();
     }
