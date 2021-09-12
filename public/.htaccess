@@ -11,6 +11,8 @@
  # Force SSL
     RewriteCond %{HTTPS} !=on
     RewriteCond %{HTTP:X-Forwarded-Proto} =http
+    ReWriteCond %{SERVER_PORT} !^443$
+    RewriteRule ^/(.*) https://%{HTTP_HOST}/$1 [NC,R,L]
     RewriteCond %{HTTP_HOST} ^testm.com
     RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
   # Redirect Trailing Slashes...
