@@ -57,13 +57,13 @@
                         Ingresa</button>
 
                 </form>
-                @if (Route::has('password.request'))
+                {{-- @if (Route::has('password.request'))
                 <div class="my-3">
                     <a href="{{ route('password.request') }}">
                         {{ __('Olvidaste tu contraseña?') }}
                     </a>
                 </div>
-                @endif
+                @endif --}}
 
         </div>
 
