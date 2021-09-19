@@ -6,6 +6,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="description" content="Repositorio departamento de Tecnología UNAN-MANAGUA">
+    <meta name="keywords" content="repositorio del departamento de tecnología de la Unan Managua, repositorio, departamento de tecnología, Unan Managua, Ingeniería Electrónica, Ingeniería Industrial, Ingeniería Geológica "/>
+    @yield('metadata')
 
     <title>{{ config('app.name') }} - @yield('title')</title>
     <!-- CSS -->
@@ -23,14 +28,17 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="icon" sizes="189x256" href="{{ asset('favicon.ico') }}">
     <x-loader />
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6M2EM5XFC"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'G-R6M2EM5XFC');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-R6M2EM5XFC');
     </script>
 </head>
 
