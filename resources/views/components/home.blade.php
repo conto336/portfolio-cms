@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="x-dns-prefetch-control" content="on">
-    <meta name="description" content="Repositorio departamento de Tecnología UNAN-MANAGUA">
-    <meta name="keywords" content="repositorio del departamento de tecnología de la Unan Managua, repositorio, departamento de tecnología, Unan Managua, Ingeniería Electrónica, Ingeniería Industrial, Ingeniería Geológica "/>
     @yield('metadata')
 
     <title>{{ config('app.name') }} - @yield('title')</title>

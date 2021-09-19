@@ -1,6 +1,11 @@
 <x-home>
     @section('title', 'Inicio')
 
+    @section('metadata')
+        <meta name="description" content="Repositorio departamento de Tecnología UNAN-MANAGUA">
+        <meta name="keywords"
+            content="repositorio del departamento de tecnología de la Unan Managua, repositorio, departamento de tecnología, Unan Managua, Ingeniería Electrónica, Ingeniería Industrial, Ingeniería Geológica ">
+    @endsection
     <!-- Top content -->
     <div class="top-content section-container" id="top-content">
         <div class="container">
