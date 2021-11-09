@@ -14,27 +14,25 @@
                     {{ session('status') }}
                 </div>
             @endif
-            <x-validation-error class="mb-2" />
+            
             <div class="card">
                 <div class="card-body">
-                    <p class="text-justify text-info">
-                        {{ __('¿Olvidaste tu contraseña? No hay problema. Simplemente díganos su dirección de
-                        correo electrónico y le enviaremos un enlace para restablecer la contraseña que le
-                        permitirá elegir una nueva.') }}
+                    <p class="text-center text-info">
+                        {{ __('Ingresa tu correo electrónico para restablecer la contraseña.') }}
                     </p>
 
                     <form method="POST" action="{{ route('password.email') }}">
                         <div class="form-group mt-3">
-                            <label for="exampleInputEmail1">Email address</label>
+                            <label for="exampleInputEmail1">Correo electrónico</label>
                             <input type="email" class="form-control" aria-describedby="emailHelp"
                                 placeholder="Ingresa tu correo">
-                            <small id="emailHelp" class="form-text text-muted">No compartas tu correo con nadie
-                                más.</small>
+                            {{-- <small id="emailHelp" class="form-text text-muted">No compartas tu correo con nadie
+                                más.</small> --}}
                         </div>
 
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">
-                                {{ __('Email Password Reset Link') }}
+                                {{ __('Restablecer') }}
                             </button>
                         </div>
                     </form>

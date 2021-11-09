@@ -79,9 +79,9 @@
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-cogs"></i></span>
                 </div>
                 <select class="form-control" name="carrer">
-                    <option value="Electrónica">Ingeniería Electrónica</option>
+                    <option value="Electronica">Ingeniería Electrónica</option>
                     <option value="Industrial">Ingeniería Industrial</option>
-                    <option value="Geológica">Ingeniería Geológica</option>
+                    <option value="Geologica">Ingeniería Geológica</option>
                 </select>
             </div>
             @error('carrer')

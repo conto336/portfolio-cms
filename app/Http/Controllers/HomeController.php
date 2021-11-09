@@ -42,11 +42,11 @@ class HomeController extends Controller
         }
 
         $doc = Document::findOrFail($id);
-        if ($doc->carrer === 'Electrónica') {
+        if ($doc->carrer === 'Electronica') {
             $carrer = 'electronica';
             return view('components.show-file', compact('doc', 'carrer'));
         }
-        if ($doc->carrer === 'Geológica') {
+        if ($doc->carrer === 'Geologica') {
             $carrer = 'geologia';
             return view('components.show-file', compact('doc', 'carrer'));
         }
@@ -89,7 +89,7 @@ class HomeController extends Controller
             return view('filter', compact('query', 'name'));
         }
 
-        $docs = Document::where('carrer', 'Electrónica')->paginate(4);
+        $docs = Document::where('carrer', 'Electronica')->paginate(4);
 
         return view('library.electronica.files', compact('docs'));
     }

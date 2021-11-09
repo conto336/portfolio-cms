@@ -4,17 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFileRequest;
-use App\Http\Requests\UpdateFileRequest;
 use App\Models\Document;
 use App\Models\Electronic;
 use App\Models\Geology;
 use App\Models\Industrial;
-use Facade\FlareClient\Stacktrace\File;
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use PhpParser\Comment\Doc;
+use Illuminate\Support\Str;
 
 class DocumentController extends Controller
 {
@@ -70,9 +66,11 @@ class DocumentController extends Controller
      */
     public function store(StoreFileRequest $request)
     {
+        $nameFake = Str::random(40);
+        
         $file = $request->file('file')
-            ->storeAs(lcfirst($request->carrer) . '/' . lcfirst($request->category), (Document::all()->count() + 1) . '.' . $request->file('file')->extension());
-
+            ->storeAs(lcfirst($request->carrer) . '/' . lcfirst($request->category), $nameFake . '.' . $request->file('file')
+                ->extension());
         $document = Document::create([
             'name' => $request->name,
             'original_name' => $request->file('file')->getClientOriginalName(),
@@ -82,38 +80,50 @@ class DocumentController extends Controller
             'keywords' => $request->name . ',' . $request->carrer . ',' . $request->category . ',' . $request->authors . ',' . $request->line,
         ]);
 
-        if ($request->carrer === 'Electrónica') {
-            $document->electronica()->create([
-                'url' => Storage::url($file),
-                'category' => lcfirst($request->category),
-                'authors' => $request->authors,
-                'description' => $request->description,
-                'line' => $request->line,
-                'size' => round((Storage::size($file) / 1000000), 2) . ' MB',
-            ]);
+        switch ($request->carrer) {
+            case 'Electronica':
+                $document->electronica()->create([
+                    'name' => $nameFake,
+                    'keywords' => $request->name . ',' . $request->carrer . ',' . $request->category . ',' . $request->authors . ',' . $request->line,
+                    'url' => Storage::url($file),
+                    'category' => lcfirst($request->category),
+                    'authors' => $request->authors,
+                    'description' => $request->description,
+                    'line' => $request->line,
+                    'size' => round((Storage::size($file) / 1000000), 2) . ' MB',
+                ]);
+                break;
+            case 'Industrial':
+                $document->industrial()->create([
+                    'name' => $nameFake,
+                    'keywords' => $request->name . ',' . $request->carrer . ',' . $request->category . ',' . $request->authors . ',' . $request->line,
+                    'url' =>  Storage::url($file),
+                    'category' => lcfirst($request->category),
+                    'authors' => $request->authors,
+                    'description' => $request->description,
+                    'line' => $request->line,
+                    'size' => round((Storage::size($file) / 1000000), 2) . ' MB',
+                ]);
+                break;
+
+            case 'Geologica':
+                $document->geologia()->create([
+                    'name' => $nameFake,
+                    'keywords' => $request->name . ',' . $request->carrer . ',' . $request->category . ',' . $request->authors . ',' . $request->line,
+                    'url' =>  Storage::url($file),
+                    'category' => lcfirst($request->category),
+                    'authors' => $request->authors,
+                    'description' => $request->description,
+                    'line' => $request->line,
+                    'size' => round((Storage::size($file) / 1000000), 2) . ' MB',
+                ]);
+                break;
+
+            default:
+                # code...
+                break;
         }
 
-        if ($request->carrer === 'Industrial') {
-            $document->industrial()->create([
-                'url' =>  Storage::url($file),
-                'category' => lcfirst($request->category),
-                'authors' => $request->authors,
-                'description' => $request->description,
-                'line' => $request->line,
-                'size' => round((Storage::size($file) / 1000000), 2) . ' MB',
-            ]);
-        }
-
-        if ($request->carrer === 'Geológica') {
-            $document->geologia()->create([
-                'url' =>  Storage::url($file),
-                'category' => lcfirst($request->category),
-                'authors' => $request->authors,
-                'description' => $request->description,
-                'line' => $request->line,
-                'size' => round((Storage::size($file) / 1000000), 2) . ' MB',
-            ]);
-        }
         return redirect()->route('admin.file-upload')
             ->with(['success' => 'El archivo "' . $request->name . '" se ha cargado con exito en ' . $request->category . ' de la carrera de Ingeniería ' . $request->carrer]);
     }
@@ -187,18 +197,25 @@ class DocumentController extends Controller
      */
     public function destroy(Document $id)
     {
+        switch ($id->carrer) {
+            case 'Electrónica':
+                Storage::delete(strtolower($id->carrer) . '/' . $id->electronica->category . '/' . $id->electronica->name . '.pdf');
+                $id->delete();
+                break;
 
-        if ($id->electronica) {
-            $id->delete();
-            Storage::delete('electronica/' . $id->electronica->category . '/' . $id->name . '.pdf');
-        }
-        if ($id->industrial) {
-            $id->delete();
-            Storage::delete('industrial/' . $id->industrial->category . '/' . $id->name . '.pdf');
-        }
-        if ($id->geologia) {
-            $id->delete();
-            Storage::delete('geologia/' . $id->geologia->category . '/' . $id->name . '.pdf');
+            case 'Industrial':
+                Storage::delete(strtolower($id->carrer) . '/' . $id->industrial->category . '/' . $id->industrial->name . '.pdf');
+                $id->delete();
+                break;
+
+            case 'Geológica':
+                Storage::delete(strtolower($id->carrer) . '/' . $id->geologia->category . '/' . $id->geologia->name . '.pdf');
+                $id->delete();
+                break;
+
+            default:
+                return 'No hay nada';
+                break;
         }
 
         return redirect()->back()

@@ -24,6 +24,7 @@
         #form-file {
             cursor: pointer;
         }
+
         #file {
             cursor: pointer;
         }
@@ -33,11 +34,14 @@
 @stop
 
 @section('content')
-    <p class="text-center"><strong>Subir Archivos al servidor</strong>, tamaño maximo del archivo es :
-        <strong id="maxFileSize">{{ ini_get('upload_max_filesize') }}</strong>.
-    </p>
+    <div class="text-center mb-3">
+        <p><strong>Subir Archivos al servidor</strong>, tamaño maximo del archivo es :
+            <strong id="maxFileSize">{{ ini_get('upload_max_filesize') }}</strong>.
+        </p>
+        <small class="text-danger fs-6">Los campos marcados con * son obligatorios</small>
+    </div>
 
-    <x-file-form/>
+    <x-file-form />
 
     @if (session()->has('success'))
         <script src="{{ asset('vendor/swetalert2/sweetalert2.all.min.js') }}"></script>
