@@ -23,8 +23,8 @@
             overflow: hidden !important;
             vertical-align: middle !important;
             /* 
-                    word-wrap: break-word !important;
-                    max-width: 400px; */
+                            word-wrap: break-word !important;
+                            max-width: 400px; */
         }
 
         #electronic td {
@@ -56,52 +56,62 @@
     @endif
 
     <div class="card">
-        <h5 class="card-header">Documentos de Ingeniería Electrónica</h5>
+        <h5 class="card-header">Documentos de Ingeniería Industrial</h5>
         <div class="card-body">
-            <table id="industrial" class="table table-striped dt-responsive nowrap" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Nombre <i class="far fa-file-pdf head"></i></th>
-                        <th>Modalidad <i class="fas fa-graduation-cap"></i></th>
-                        <th>Fecha <i class="far fa-clock head"></i></th>
-                        <th>Acciones <i class="fas fa-edit"></i> / <i class="fas fa-trash-alt"></th>
-                    </tr>
-                </thead>
-                <tbody id="tableElectronica">
-                    @foreach ($docsIndustrial as $industrial)
+            @if ($industrial > 0)
+                <table id="industrial" class="table table-striped dt-responsive nowrap" style="width:100%">
+                    <thead>
                         <tr>
-                            <td>
-                                <p class="text-mute">
-                                    <img class="head" src="{{ asset('images/files.svg') }}" alt="file" width="30" />
-                                    &nbsp; {{ $industrial->document->name }}
-                                </p>
-                            </td>
-                            <td>
-                                <p>{{ $industrial->category }}</p>
-                            </td>
-                            <td>
-                                <p class="text-muted">{{ $industrial->document->date }}</p>
-                            </td>
-                            <td>
-                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                    <div class="btn-group mx-auto" role="group" aria-label="First group">
-                                        <form action="{{ route('admin.file-edit', [$industrial->document->id, $industrial->document->name]) }}" method="GET">
-                                            <button type="submit" class="btn btn-primary btn-sm"><i
-                                                    class="fas fa-edit"></i></button>
-                                        </form>
-                                        <div class="mx-1"></div>
-                                        <form action="{{ route('admin.deleteFile', $industrial->document->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"><i
-                                                    class="fas fa-recycle"></i></button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </td>
+                            <th>Nombre <i class="far fa-file-pdf head"></i></th>
+                            <th>Modalidad <i class="fas fa-graduation-cap"></i></th>
+                            <th>Fecha <i class="far fa-clock head"></i></th>
+                            <th>Acciones <i class="fas fa-edit"></i> / <i class="fas fa-trash-alt"></th>
                         </tr>
-                    @endforeach
-            </table>
+                    </thead>
+                    <tbody id="tableElectronica">
+                        @foreach ($docsIndustrial as $industrial)
+                            <tr>
+                                <td>
+                                    <p class="text-mute">
+                                        <img class="head" src="{{ asset('images/files.svg') }}" alt="file"
+                                            width="30" />
+                                        &nbsp; {{ $industrial->document->name }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>{{ $industrial->category }}</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">{{ $industrial->document->date }}</p>
+                                </td>
+                                <td>
+                                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                        <div class="btn-group mx-auto" role="group" aria-label="First group">
+                                            <form
+                                                action="{{ route('admin.file-edit', [$industrial->document->id, $industrial->document->name]) }}"
+                                                method="GET">
+                                                <button type="submit" class="btn btn-primary btn-sm"><i
+                                                        class="fas fa-edit"></i></button>
+                                            </form>
+                                            <div class="mx-1"></div>
+                                            <form action="{{ route('admin.deleteFile', $industrial->document->id) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm"><i
+                                                        class="fas fa-recycle"></i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                </table>
+            @else
+                <div class="text-center">
+                    <h4 class="fw-bolder">No hay archivos disponibles <i class="far fa-file-pdf"></i></h4>
+                </div>
+            @endif
         </div>
     </div>
 
@@ -231,6 +241,5 @@
             actions("#tableIndustrial");
             table("#industrial");
         });
-
     </script>
 @stop
