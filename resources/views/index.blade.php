@@ -5,6 +5,7 @@
         <meta name="description" content="Repositorio departamento de Tecnología UNAN-MANAGUA">
         <meta name="keywords"
             content="repositorio del departamento de tecnología de la Unan Managua, repositorio, departamento de tecnología, Unan Managua, Ingeniería Electrónica, Ingeniería Industrial, Ingeniería Geológica ">
+        <meta name="theme-color" content="#4285f4" >
     @endsection
     <!-- Top content -->
     <div class="top-content section-container" id="top-content">
