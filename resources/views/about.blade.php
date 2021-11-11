@@ -8,13 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{ asset('vendor/css/about.css') }}" />
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/css/loader.css') }}"> 
     <noscript>
         <link rel="stylesheet" href="{{ asset('vendor/css/noscript.css') }}" /></noscript>
 </head>
 
 <body class="is-preload">
-    <x-loader />
     <!-- Sidebar -->
     <section id="sidebar">
         <div class="inner">
@@ -195,54 +193,9 @@
                         </section>
 
                     </div>
-                    <!---<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>--->
                 </div>
             </section>
 
-            {{-- <!-- Three -->
-            <section id="three" class="wrapper style1 fade-up">
-                <div class="inner">
-                    <h2>Get in touch</h2>
-                    <div class="split style1">
-
-                        <section>
-                            <ul class="contact">
-                                <!---<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>--->
-                                <li>
-                                    <h3>Email</h3>
-                                    <a
-                                        href="mailto:thethreedotsindia@gmail.com?subject=new visitor">thethreedotsindia@gmail.com</a>
-                                </li>
-                                <li>
-                                    <h3>Phone</h3>
-                                    <span>+918505028093</span>
-                                </li>
-                                <li>
-                                    <h3>Social</h3>
-                                    <ul class="icons">
-                                        <li><a href="https://www.facebook.com/The-Three-Dots-102613577889704"
-                                                class="icon brands fa-facebook-f"><span
-                                                    class="label">Facebook</span></a></li>
-                                        <li><a href="https://www.youtube.com/channel/UCnCLCVQDPd7Z43PcLeksFoQ?view_as=subscriber"
-                                                class="icon brands fa-youtube"><span class="label">Youtube</span></a>
-                                        </li>
-                                        <li><a href="https://www.linkedin.com/company/the-three-dots"
-                                                class="icon brands fa-linkedin-in"><span
-                                                    class="label">LinkedIn</span></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-            </section>--}}
     </div>
 
     <section id="footer">
@@ -269,7 +222,6 @@
     <script src="{{ asset('vendor/js/breakpoints.min.js') }}"></script>
     <script src="{{ asset('vendor/js/util.js') }}"></script>
     <script src="{{ asset('vendor/js/main.js') }}"></script>
-    <script src="{{ asset('vendor/js/loader.js') }}"></script>
 </body>
 
 </html>

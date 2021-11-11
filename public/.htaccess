@@ -9,10 +9,7 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
  # Force SSL
-    #RewriteCond %{HTTPS} !=on
-    #RewriteCond %{HTTP:X-Forwarded-Proto} =http
-    #RewriteCond %{HTTP_HOST} ^testm.com
-    #RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
   # Redirect Trailing Slashes...
     #RewriteRule ^(.*)/$ /$1 [L,R=301]
 
