@@ -29,6 +29,11 @@
             cursor: pointer;
         }
 
+        .fa-question-circle {
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
     </style>
 
 @stop
@@ -78,14 +83,6 @@
         language: 'es',
         width: '100%',
         height: 200,
-    });
-    $(function() {
-        $("#date").datepicker({
-            changeMonth: true,
-            changeYear: true,
-            dateFormat: 'd M, yy',
-            //showButtonPanel: true,
-        });
     });
 </script>
 @stop

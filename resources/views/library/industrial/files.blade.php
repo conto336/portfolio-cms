@@ -25,7 +25,8 @@
                                 <strong>Autores:</strong> {{ $doc->industrial->authors }}
                             </div>
                             <div class="card-body">
-                                <p>{{ $doc->date }}. Ingenería {{ $doc->carrer }}</p>
+                                <p><strong>Carrera:</strong> Ingenería Industrial</p>
+                                <small class="text-muted">{{ $doc->date }}. </small>
                                 <p> <strong>Modalidad:</strong> {{ ucfirst($doc->industrial->category) }}</p>
                                 <a href="{{ route('showFile', [$doc->name, $doc->id]) }}"
                                     class="btn-primary btn-customized"> <i class="fas fa-eye"></i> Ver</a>

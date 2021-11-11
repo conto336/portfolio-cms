@@ -42,114 +42,12 @@
         </div>
     </div>
 
-    <!-- Section 5 -->
-    {{-- 
-    <div class="section-5-container section-container" id="section-5">
-        <div class="container">
-            <div class="row">
-                <div class="col section-5 section-description wow fadeIn">
-                    <h2>Recursos</h2>
-                    <div class="divider-1 wow fadeInUp"><span></span></div>
-
-                    <br>
-                    <p>
-                        <a class="btn btn-primary btn-customized" data-toggle="collapse" href="#lines" role="button"
-                            aria-expanded="false" aria-controls="lines"> <i class="fas fa-chart-line"></i>
-                            Líneas de investigación
-                        </a>
-                    </p>
-                    <div class="collapse" id="lines">
-                        <div class="card card-body">
-
-                            <div class="accordion" id="lineasDeInvestigacion">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link btn-block text-left" type="button"
-                                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                                aria-controls="collapseOne">
-                                                Ingenería Electrónica <i class="fas fa-microchip"></i>
-                                            </button>
-                                        </h2>
-                                    </div>
-
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                        data-parent="#lineasDeInvestigacion">
-                                        <div class="card-body">
-                                            <ul class="list-group text-left">
-                                                <li class="list-group-item">An item</li>
-                                                <li class="list-group-item">A second item</li>
-                                                <li class="list-group-item">A third item</li>
-                                                <li class="list-group-item">A fourth item</li>
-                                                <li class="list-group-item">And a fifth one</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link btn-block text-left collapsed" type="button"
-                                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                                aria-controls="collapseTwo">
-                                                Ingenería Industrial <i class="fas fa-industry"></i>
-                                            </button>
-                                        </h2>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                        data-parent="#lineasDeInvestigacion">
-                                        <div class="card-body">
-                                            <ul class="list-group text-left">
-                                                <li class="list-group-item">An item</li>
-                                                <li class="list-group-item">A second item</li>
-                                                <li class="list-group-item">A third item</li>
-                                                <li class="list-group-item">A fourth item</li>
-                                                <li class="list-group-item">And a fifth one</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link btn-block text-left collapsed" type="button"
-                                                data-toggle="collapse" data-target="#collapseThree"
-                                                aria-expanded="false" aria-controls="collapseThree">
-                                                Ingenería Geológica <i class="fas fa-dice-d20"></i>
-                                            </button>
-                                        </h2>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                        data-parent="#lineasDeInvestigacion">
-                                        <div class="card-body">
-                                            <ul class="list-group text-left">
-                                                <li class="list-group-item">An item</li>
-                                                <li class="list-group-item">A second item</li>
-                                                <li class="list-group-item">A third item</li>
-                                                <li class="list-group-item">A fourth item</li>
-                                                <li class="list-group-item">And a fifth one</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
- --}}
     <!-- Section 1 -->
     <div class="section-1-container section-container" id="section-1">
         <div class="container">
             <div class="row">
                 <div class="col section-1 section-description wow fadeIn">
-                    <h2>Qué se hace?</h2>
+                    <h2>Roles de</h2>
                     <div class="divider-1 wow fadeInUp"><span></span></div>
                 </div>
             </div>

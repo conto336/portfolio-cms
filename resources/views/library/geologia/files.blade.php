@@ -30,11 +30,11 @@
                                 </h6>
                                 <div class="divider-1 wow fadeInUp"><span></span></div>
                                 <p class="card-text">
-                                    <div class="text-truncate">
-                                        {!! $doc->geologia->description !!} ...
-                                        <a class="text-dark"
-                                            href="{{ route('showFile', [$doc->name, $doc->id]) }}">Lea más</a>
-                                    </div>
+                                <div class="text-truncate">
+                                    {!! $doc->geologia->description !!} ...
+                                    <a class="text-dark"
+                                        href="{{ route('showFile', [$doc->name, $doc->id]) }}">Lea más</a>
+                                </div>
                                 </p>
 
                             </div>
@@ -42,7 +42,8 @@
                                 <strong>Autores:</strong> {{ $doc->geologia->authors }}
                             </div>
                             <div class="card-body">
-                                <p>{{ $doc->date }}. Ingenería {{ $doc->carrer }}</p>
+                                <p> <strong>Carrera: </strong> Ingenería Geologíca</p>
+                                <small class="text-muted">{{ $doc->date }}. </small>
                                 <p> <strong>Modalidad:</strong> {{ ucfirst($doc->geologia->category) }}</p>
                                 <a href="{{ route('showFile', [$doc->name, $doc->id]) }}"
                                     class="btn-primary btn-customized"> <i class="fas fa-eye"></i> Ver</a>
@@ -55,7 +56,7 @@
             <div class="my-3">
                 {{ $docs->links() }}
             </div>
-            
+
         </div>
     @else
         <div class="container">

@@ -16,9 +16,9 @@
                     <p> <strong>Tamaño: </strong> {{ $doc->$carrer->size }}</p>
                     <p>
                         <strong>Linea de investigación:</strong>
-                        <a class="btn btn-primary btn-customized bg-primary"  href="#">
+                        <button class="btn btn-primary btn-customized bg-primary"  href="#">
                             <i class="fas fa-at"></i>{{ __($doc->$carrer->line) }}
-                        </a>
+                        </button>
                     </p>
                 </div>
 

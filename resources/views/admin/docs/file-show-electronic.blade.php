@@ -25,8 +25,8 @@
             overflow: hidden !important;
             vertical-align: middle !important;
             /* 
-                                    word-wrap: break-word !important;
-                                    max-width: 400px; */
+                                        word-wrap: break-word !important;
+                                        max-width: 400px; */
         }
 
         #electronic td {
@@ -78,7 +78,9 @@
                                         <img class="head" src="{{ asset('images/files.svg') }}" alt="file"
                                             width="30" />
                                         &nbsp;
-                                        {{ $electronica->document->name }}
+                                        <a href="{{ $electronica->url }}" target="_blank" rel="noreferer">
+                                            {{ $electronica->document->name }}
+                                        </a>
                                     </p>
                                 </td>
                                 <td class="text-center">
