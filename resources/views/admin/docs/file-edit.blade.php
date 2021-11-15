@@ -54,6 +54,20 @@
                     @enderror
 
                     <div class="form-group">
+                        <label for="date">Nueva fecha:</label>
+                        <input type="text" class="form-control" name="date" id="date"
+                            placeholder="Ingresa la nueva fecha ..." value="{{ $doc->date }}">
+                    </div>
+                    @error('date')
+                        <div class="alert alert-danger alert-dismissible fade show mt-2 text-center" role="alert">
+                            <strong>Oops! something went wrong</strong><br> {{ $message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @enderror
+
+                    <div class="form-group">
                         <label>Actual descripción:</label>
                         <div class="text-bold text-info">
                             {!! $doc->$carrer->description !!}
@@ -105,6 +119,7 @@
             width: '100%',
             height: 200,
         });
+
     </script>
 
 @stop

@@ -176,7 +176,7 @@
                         </div>
                         <div class="modal-body">
                             <p>El formato de la fecha debe ser mes, año.</p>
-                            <p class="text-success">Ejemplo Noviembre, 2020.</p>
+                            <p class="text-success">Ejemplo: Noviembre, 2020.</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

@@ -22,7 +22,7 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
                 document.getElementById(file).classList.add("is-invalid");
             }
         } else if ((document.getElementById(name).value === "") && (document.getElementById(file).files
-                .length != 0)) {
+            .length != 0)) {
             e.preventDefault();
             Swal.fire(
                 'Error',
@@ -77,6 +77,13 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
         });
     });
     document.getElementById(file).addEventListener("change", (e) => {
+
+        window.addEventListener("beforeunload", (e) => {
+            let confirmationMessage = "\o`/"
+            e.returnValue = confirmationMessage;
+            return confirmationMessage;
+        });
+
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: "btn btn-success btn-block",
