@@ -39,21 +39,26 @@ class AdminController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        if ($request->carrer == 'Electronica' || $request->carrer == 'Industrial' || $request->carrer == 'Geologia') {
-            $initials = $request['name'][0] . $request['surname'][0];
-            User::create([
-                'name' => $request['name'],
-                'surname' => $request['surname'],
-                'initials' => strtoupper($initials),
-                'carrer' => strtoupper($request['carrer']),
-                'carnet' => $request['carnet'],
-                'email' => $request['email'],
-                'password' => Hash::make($request['password']),
-            ]);
-
-            return redirect()->route('admin.users-register')->with(['success' => 'El usuario ' . strtoupper($request->name) . ' con número de carnet: ' . $request->carnet . ' se ha registrado con exito']);
+        if ($request->password != $request->password_confirmation) {
+            return redirect()->route('admin.users-register')->with(['danger' => "las contraseñas no son iguales"]);
         } else {
-            return redirect()->route('admin.users-register')->with(['warning' => 'La carrera: ' . $request->carrer . ' NO EXISTE']);
+            if ($request->carrer == 'Electronica' || $request->carrer == 'Industrial' || $request->carrer == 'Geologia') {
+                $initials = $request['name'][0] . $request['lastname'][0];
+                User::create([
+                    'name' => $request['name'],
+                    'lastname' => $request['lastname'],
+                    'email' => $request['email'],
+                    'role' => $request['role'],
+                    'initials' => strtoupper($initials),
+                    'carrer' => strtoupper($request['carrer']),
+                    'carnet' => $request['carnet'],
+                    'password' => Hash::make($request['password']),
+                ]);
+
+                return redirect()->route('admin.users-register')->with(['success' => 'El usuario ' . strtoupper($request->name) . ' con número de carnet: ' . $request->carnet . ' se ha registrado con exito']);
+            } else {
+                return redirect()->route('admin.users-register')->with(['warning' => 'La carrera: ' . $request->carrer . ' NO EXISTE']);
+            }
         }
     }
 
@@ -86,7 +91,7 @@ class AdminController extends Controller
     public function edit(User $id)
     {
         $updateUser = $id;
-       return view('admin.users.users-edit', compact('updateUser'));
+        return view('admin.users.users-edit', compact('updateUser'));
     }
 
     /**

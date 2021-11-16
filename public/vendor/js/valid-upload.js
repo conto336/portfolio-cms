@@ -1,6 +1,11 @@
 function verify(btn, file, name, authors, date, line, maxFileSize, progress, reset, uploadFile) {
 
     document.getElementById(btn).addEventListener("click", (e) => {
+
+        window.onbeforeunload = function (e) {
+            return;
+        }
+
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: "btn btn-success btn-block",
@@ -13,7 +18,7 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
                 'Error',
                 'Selecciona un archivo',
                 'warning'
-            )
+            );
 
             if (document.getElementById(file).classList.contains("is-valid")) {
                 document.getElementById(file).classList.remove("is-valid");
@@ -78,12 +83,6 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
     });
     document.getElementById(file).addEventListener("change", (e) => {
 
-        window.addEventListener("beforeunload", (e) => {
-            let confirmationMessage = "\o`/"
-            e.returnValue = confirmationMessage;
-            return confirmationMessage;
-        });
-
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: "btn btn-success btn-block",
@@ -123,10 +122,14 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
                 e.total);
             document.getElementById(progress).innerHTML = "100%";
         });
-        document.getElementById(progress).innerHTML = "100%";
+        window.onbeforeunload = function (e) {
+            return true;
+        };
+
     });
 
     document.getElementById(reset).addEventListener("click", () => {
+
 
         document.getElementById(progress).value = 0;
         document.getElementById(btn).disabled = false;
@@ -144,4 +147,3 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
         }
     });
 }
-verify('data', 'file', 'name', 'authors', 'date', 'line', 'maxFileSize', 'progress', 'resetAll', 'uploadFile');

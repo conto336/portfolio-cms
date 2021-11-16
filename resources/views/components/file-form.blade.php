@@ -149,10 +149,10 @@
             </label>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><i class=" fas fa-calendar-alt"></i></span>
+                    <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
                 </div>
-                <input type="text" class="date-own form-control form-control" name="date" id="date" autocomplete="off"
-                    placeholder="Ingresa el año .." aria-label="Year" required />
+                <input type="text" class="date-own date-picker form-control form-control" name="date" id="date"
+                    autocomplete="off" placeholder="Ingresa el año .." aria-label="Year" required />
             </div>
             @error('date')
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">

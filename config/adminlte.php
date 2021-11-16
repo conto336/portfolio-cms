@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b> DepT',
+    'logo' => '<b>DPT</b>',
     //'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img' => 'images/Logo-utilidades/LogoUNAN.png',
     'logo_img_class' => 'brand-image',

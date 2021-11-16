@@ -30,11 +30,13 @@ class StoreUserRequest extends FormRequest
     {
         $rules = [
             'name' => ['required', 'string', 'max:30'],
-            'surname' => ['required', 'string', 'max:30'],
+            'lastname' => ['required', 'string', 'max:30'],
             'carrer' => ['required', 'string', 'max:30'],
             'carnet' => ['required', 'numeric', 'min:8', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'role'=> ['required', 'string'],
             'password' => ['required', 'string', 'max:30'],
+            'password_confirmation' => ['required', 'string', 'max:30'],
         ];
         return $rules;
     }
