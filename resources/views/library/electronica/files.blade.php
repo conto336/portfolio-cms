@@ -36,16 +36,18 @@
                                 </div>
                                 </p>
 
-                            </div>
-                            <div class="card-body">
-                                <strong>Autores:</strong> {{ $doc->electronica->authors }}
-                            </div>
-                            <div class="card-body">
-                                <p><strong>Carrera: </strong> Ingenería Electrónica</p>
-                                <small class="text-muted">{{ $doc->date }}. </small>
-                                <p> <strong>Modalidad:</strong> {{ ucfirst($doc->electronica->category) }}</p>
-                                <a href="{{ route('showFile', [$doc->name, $doc->id]) }}"
-                                    class="btn-primary btn-customized"> <i class="fas fa-eye"></i> Ver</a>
+                                <p>
+                                    <strong>Autores:</strong>
+                                    {{ $doc->electronica->authors }}
+                                </p>
+
+                                <div class="card-body">
+                                    <p><strong>Carrera: </strong> Ingenería Electrónica</p>
+                                    <small class="text-muted">{{ $doc->date }}. </small>
+                                    <p> <strong>Modalidad:</strong> {{ ucfirst($doc->electronica->category) }}</p>
+                                    <a href="{{ route('showFile', [$doc->name, $doc->id]) }}"
+                                        class="btn-primary btn-customized"> <i class="fas fa-eye"></i> Ver</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -62,6 +64,7 @@
             <div class="my-3 mx-auto">
                 <div class="alert alert-primary" role="alert">
                     <p class="h5 text-success">Aun no hay archivos disponibles</p>
+
                 </div>
             </div>
         </div>

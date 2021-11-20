@@ -55,6 +55,10 @@ class HomeController extends Controller
             return view('components.show-file', compact('doc', 'carrer'));
         }
     }
+    public function showLines(Request $request)
+    {
+        return Document::where("keywords", 'LIKE', '%' . $request->lineas . '%')->get();
+    }
 
     public function about()
     {

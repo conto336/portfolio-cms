@@ -14,7 +14,7 @@ class StoreUserRequest extends FormRequest
      */
     public function authorize()
     {
-        if (Auth::user()->id === 1) {
+        if (Auth::user()->id === 1 && Auth::user()->role === "ADMIN") {
             return true;
         } else {
             return false;

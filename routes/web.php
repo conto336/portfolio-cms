@@ -35,3 +35,5 @@ Route::get('carrera/ingenieria geologica/', [HomeController::class, 'geologyFile
 
 Route::get('archivos/{nombre}&{id}', [HomeController::class, 'show'])->name('showFile');
 
+Route::get('archivos/carrera={carrera}/lineas={lineas}', [HomeController::class, 'showLines'])->name('showLines');
+

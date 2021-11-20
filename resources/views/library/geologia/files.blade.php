@@ -38,9 +38,11 @@
                                 </p>
 
                             </div>
-                            <div class="card-body">
+
+                            <p>
                                 <strong>Autores:</strong> {{ $doc->geologia->authors }}
-                            </div>
+                            </p>
+                            
                             <div class="card-body">
                                 <p> <strong>Carrera: </strong> Ingenería Geologíca</p>
                                 <small class="text-muted">{{ $doc->date }}. </small>

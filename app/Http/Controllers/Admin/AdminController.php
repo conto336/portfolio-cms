@@ -114,7 +114,7 @@ class AdminController extends Controller
      */
     public function destroy(User $id)
     {
-        if (Auth::user()->id === $id->id || Auth::user()->id === 1) {
+        if ($id->id === 1 && $id->role === 'ADMIN') {
             return redirect()->back()->with(['danger' => 'NO PUEDES ELMINAR AL ADMINISTRADOR DEL SITIO']);
         }
         $id->delete();
