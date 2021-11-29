@@ -66,7 +66,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 text-left">
-                            <p>© {{ date('Y') }} Departamento de Tecnología UNAN-MANGUA.</p>
+                            <p>© {{ date('Y') }} Departamento de Tecnología UNAN-MANAGUA.</p>
                         </div>
                         <div class="col-md-6 text-right">
                             <p>Designed by: Carlos J Conto <i class="fas fa-robot"></i></p>
