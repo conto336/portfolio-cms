@@ -15,11 +15,12 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->longText('name');
             $table->text('original_name');
             $table->string('carrer', 25);
             $table->string('type');
             $table->string('date');
+            $table->text('keywords');
             $table->timestamps();
         });
     }

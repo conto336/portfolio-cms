@@ -1,6 +1,12 @@
 <x-home>
     @section('title', 'Inicio')
 
+    @section('metadata')
+        <meta name="description" content="Repositorio departamento de Tecnología UNAN-MANAGUA">
+        <meta name="keywords"
+            content="repositorio del departamento de tecnología de la Unan Managua, repositorio, departamento de tecnología, Unan Managua, Ingeniería Electrónica, Ingeniería Industrial, Ingeniería Geológica ">
+        <meta name="theme-color" content="#4285f4" >
+    @endsection
     <!-- Top content -->
     <div class="top-content section-container" id="top-content">
         <div class="container">
@@ -72,7 +78,7 @@
         </div>
     </div>
 
-    <!-- Section 5 -->
+    {{-- <!-- Section 5 -->
     <div class="section-5-container section-container" id="section-5">
         <div class="container">
         
@@ -108,7 +114,7 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Section 2 -->
     <div class="section-2-container section-container section-container-gray-bg" id="section-2">
@@ -141,7 +147,7 @@
 
             <div class="row">
                 <div class="col section-3 section-description wow fadeIn">
-                    <h2>Docentes</h2>
+                    <h2>Autoridades</h2>
                     <div class="divider-1 wow fadeInUp"><span></span></div>
                 </div>
             </div>
@@ -165,7 +171,7 @@
                         <div class="col-md-9">
                             <h3>MSc. Milciades Delgadillo</h3>
                             <p>
-                                <strong>Coordinador de Ingeniería Electrónica.</strong>
+                                <strong>Coordinador de Ingeniería Electrónica </strong> <i class="fas fa-microchip"></i>
                             </p>
                         </div>
                         <div class="col-md-3">
@@ -184,7 +190,7 @@
                         <div class="col-md-9">
                             <h3>MSc. Sergio Ramirez</h3>
                             <p>
-                                <strong>Coordinador de Ingeniería Industrial.</strong>
+                                <strong>Coordinador de Ingeniería Industrial</strong> <i class="fas fa-industry"></i>
                             </p>
                         </div>
                     </div>
@@ -194,7 +200,7 @@
                         <div class="col-md-9">
                             <h3>MSc. Francisco</h3>
                             <p>
-                                <strong>Coordinador de Ingeniería Geológia.</strong>
+                                <strong>Coordinador de Ingeniería Geológia</strong> <i class="fas fa-dice-d20"></i>
                             </p>
                         </div>
                         <div class="col-md-3">

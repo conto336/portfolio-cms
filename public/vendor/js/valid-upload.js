@@ -1,20 +1,24 @@
 function verify(btn, file, name, authors, date, line, maxFileSize, progress, reset, uploadFile) {
 
     document.getElementById(btn).addEventListener("click", (e) => {
+
+        window.onbeforeunload = function (e) {
+            return;
+        }
+
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: "btn btn-success btn-block",
             },
             buttonsStyling: false,
         });
-        if ((document.getElementById(file).files.length === 0) && (document.getElementById(name)
-                .value === "")) {
+        if ((document.getElementById(file).files.length === 0)) {
             e.preventDefault();
             Swal.fire(
                 'Error',
                 'Selecciona un archivo',
                 'warning'
-            )
+            );
 
             if (document.getElementById(file).classList.contains("is-valid")) {
                 document.getElementById(file).classList.remove("is-valid");
@@ -23,11 +27,11 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
                 document.getElementById(file).classList.add("is-invalid");
             }
         } else if ((document.getElementById(name).value === "") && (document.getElementById(file).files
-                .length != 0)) {
+            .length != 0)) {
             e.preventDefault();
             Swal.fire(
                 'Error',
-                'Ingresa un nombre',
+                'Ingresa el nombre del archivo',
                 'warning'
             )
             document.getElementById(name).classList.add("is-invalid");
@@ -78,6 +82,7 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
         });
     });
     document.getElementById(file).addEventListener("change", (e) => {
+
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: "btn btn-success btn-block",
@@ -89,6 +94,9 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
         const maxFileSizeTexContent = document.getElementById(maxFileSize).textContent;
         const maxData = Number.parseInt(maxFileSizeTexContent, 10);
         const fileReader = new FileReader();
+
+        document.getElementById('filename').innerHTML = '1 archivo';
+
         fileReader.readAsDataURL(data);
         if (size > maxData) {
             Swal.fire(
@@ -114,12 +122,18 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
                 e.total);
             document.getElementById(progress).innerHTML = "100%";
         });
+        window.onbeforeunload = function (e) {
+            return true;
+        };
+
     });
 
     document.getElementById(reset).addEventListener("click", () => {
 
+
         document.getElementById(progress).value = 0;
         document.getElementById(btn).disabled = false;
+        document.getElementById('filename').innerHTML = 'choose file';
         if (
             document.getElementById(file).classList.contains("is-valid") ||
             document.getElementById(file).classList.contains("is-invalid") ||
@@ -133,4 +147,3 @@ function verify(btn, file, name, authors, date, line, maxFileSize, progress, res
         }
     });
 }
-verify('data', 'file', 'name', 'authors', 'date', 'line', 'maxFileSize', 'progress', 'resetAll', 'uploadFile');

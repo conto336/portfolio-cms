@@ -70,7 +70,7 @@
                     </td>
                     <td>
                         <div class="btn-group" role="group" aria-label="First group">
-                            <form action="{{-- route('admin.edit-user',$user) --}}" method="GET">
+                            <form action="{{ route('profile.show') }}" method="GET">
                                 <div class="mx-1">
                                     <button type="submit" class="btn btn-primary btn-sm"><i
                                             class="fas fa-edit"></i></button>

@@ -1,5 +1,5 @@
 <x-home>
-    @section('title', 'Monografías de Ingeniería Electrónica')
+    @section('title', 'Resultados de busqueda')
     @section('css')
         <link rel="stylesheet" href="{{ asset('vendor/plugins/data-tables/CSS/dataTables.bootstrap4.min.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/plugins/data-tables/CSS/responsive.bootstrap4.min.css') }}">
@@ -72,11 +72,12 @@
                         </thead>
                         <tbody>
                             @foreach ($query as $document)
+
                                 <tr>
                                     <td>
                                         <p class="text-mute text-justify">
-                                            <img class="head" src="{{ asset('images/files.svg') }}" alt="file"
-                                                width="30" />
+                                            <img class="head" src="{{ asset('images/files.svg') }}"
+                                                alt="file" width="30" />
                                             &nbsp; {{ $document->name }}
                                         </p>
                                     </td>
@@ -93,9 +94,9 @@
                                         <td>
 
                                             <div class="btn-group" role="group">
-                                                <a class="btn btn-primary" href="{{ $document->electronica->url }}"
-                                                    target="_blank" data-toggle="popover-hover" data-placement="left"
-                                                    title="Ver"
+                                                <a class="btn btn-primary"
+                                                    href="{{ route('showFile', [$document->name, $document->id]) }}"
+                                                    data-toggle="popover-hover" data-placement="left" title="Ver"
                                                     data-content="Has clic para ver el archivo en otra pestaña">
                                                     <i class="fas fa-eye"></i></a>
                                                 <a class="btn btn-info" href="{{ $document->electronica->url }}"
@@ -112,8 +113,9 @@
                                         <td>
 
                                             <div class="btn-group" role="group">
-                                                <a class="btn btn-primary" href="{{ $document->industrial->url }}"
-                                                    target="_blank" data-toggle="popover-hover" data-placement="left"
+                                                <a class="btn btn-primary"
+                                                    href="{{ route('showFile', [$document->name, $document->id]) }}"
+                                                    data-toggle="popover-hover" data-placement="left"
                                                     title="Ver"
                                                     data-content="Has clic para ver el archivo en otra pestaña">
                                                     <i class="fas fa-eye"></i></a>
@@ -131,8 +133,9 @@
                                         <td>
 
                                             <div class="btn-group" role="group">
-                                                <a class="btn btn-primary" href="{{ $document->geologia->url }}"
-                                                    target="_blank" data-toggle="popover-hover" data-placement="left"
+                                                <a class="btn btn-primary"
+                                                    href="{{ route('showFile', [$document->name, $document->id]) }}"
+                                                    data-toggle="popover-hover" data-placement="left"
                                                     title="Ver"
                                                     data-content="Has clic para ver el archivo en otra pestaña">
                                                     <i class="fas fa-eye"></i></a>
@@ -187,7 +190,6 @@
                     }
                 });
             });
-
         </script>
 
     @endsection

@@ -6,6 +6,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    @yield('metadata')
 
     <title>{{ config('app.name') }} - @yield('title')</title>
     <!-- CSS -->
@@ -17,11 +20,24 @@
     <link rel="stylesheet" href="{{ asset('vendor/css/custom/style.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/css/custom/media-queries.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/css/loader.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/css/table_wiki.css') }}">
     @yield('css')
     <!-- Favicon and touch icons -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="icon" sizes="189x256" href="{{ asset('favicon.ico') }}">
     <x-loader />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6M2EM5XFC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-R6M2EM5XFC');
+    </script>
 </head>
 
 <body>
@@ -29,62 +45,6 @@
     <x-navegation-menu />
     <!-- Wrapper -->
     <div class="wrapper">
-        {{-- <!-- Sidebar -->
-			<div class="sidebar">
-				
-				<!-- close sidebar menu -->
-				<div class="dismiss">
-					<i class="fas fa-arrow-left"></i>
-				</div>
-				
-				<div class="logo">
-					<h3><a href="index.html">Bootstrap 4 Template with Sidebar Menu</a></h3>
-				</div>
-				
-				<ul class="list-unstyled menu-elements">
-					<li class="active">
-						<a class="scroll-link" href="#top-content"><i class="fas fa-home"></i> Home</a>
-					</li>
-					<li>
-						<a class="scroll-link" href="#section-1"><i class="fas fa-cog"></i> What we do</a>
-					</li>
-					<li>
-						<a class="scroll-link" href="#section-2"><i class="fas fa-user"></i> About us</a>
-					</li>
-					<li>
-						<a class="scroll-link" href="#section-5"><i class="fas fa-pencil-alt"></i> Portfolio</a>
-					</li>
-					<li>
-						<a class="scroll-link" href="#section-6"><i class="fas fa-envelope"></i> Contact us</a>
-					</li>
-					<li>
-						<a href="#otherSections" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" role="button" aria-controls="otherSections">
-							<i class="fas fa-sync"></i>Other sections
-						</a>
-						<ul class="collapse list-unstyled" id="otherSections">
-							<li>
-								<a class="scroll-link" href="#section-3">Our projects</a>
-							</li>
-							<li>
-								<a class="scroll-link" href="#section-4">We think that...</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				
-				<div class="to-top">
-					<a class="btn btn-primary btn-customized-3" href="#" role="button">
-	                    <i class="fas fa-arrow-up"></i> Top
-	                </a>
-				</div>
-				
-				<div class="dark-light-buttons">
-					<a class="btn btn-primary btn-customized-4 btn-customized-dark" href="#" role="button">Dark</a>
-					<a class="btn btn-primary btn-customized-4 btn-customized-light" href="#" role="button">Light</a>
-				</div>
-			
-			</div> --}}
-        <!-- End sidebar -->
 
         <!-- Dark overlay -->
         <div class="overlay"></div>
@@ -92,10 +52,6 @@
         <!-- Content -->
         <div class="content">
 
-            {{-- <!-- open sidebar menu -->
-				<a class="btn btn-primary btn-customized open-menu" href="#" role="button">
-                    <i class="fas fa-align-left"></i> <span>Menu</span>
-                </a> --}}
             {{ $slot }}
 
             <div class="to-top m-2 text-right">
@@ -110,7 +66,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 text-left">
-                            <p>© {{ date('Y') }} Departamento de Tecnología UNAN-MANGUA.</p>
+                            <p>© {{ date('Y') }} Departamento de Tecnología UNAN-MANAGUA.</p>
                         </div>
                         <div class="col-md-6 text-right">
                             <p>Designed by: Carlos J Conto <i class="fas fa-robot"></i></p>

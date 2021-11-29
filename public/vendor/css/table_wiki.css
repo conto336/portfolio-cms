@@ -81,10 +81,8 @@
     width: 13px;
     height: 13px;
     margin-right: 0.5rem;
-    margin-top: 0.5rem;
     float: left;
     border-radius: 50%;
-    vertical-align: middle !important;
 }
 
 .widget-26 .widget-26-job-category span {
@@ -227,6 +225,33 @@
     select
     option {
     color: #3c4142;
+}
+
+.card-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ccc;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    transition: all 2s;
+}
+
+.card-inner:hover {
+    transform: scale(1.1);
+}
+
+.mg-text span {
+    font-size: 12px;
+}
+
+.mg-text {
+    line-height: 14px;
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
