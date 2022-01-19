@@ -19,7 +19,6 @@
     <x-file-form />
 
     @if (session()->has('success'))
-        <script src="{{ asset('vendor/swetalert2/sweetalert2.all.min.js') }}"></script>
         <script>
             Swal.fire({
                 title: "Archivo subido con éxito",
@@ -42,7 +41,7 @@
 @stop
 
 @section('css')
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="{{ asset('vendor/jquery/jquery-ui.css') }}">
 
 <style>
     #progress {
@@ -81,19 +80,25 @@
 
 <script src="{{ asset('vendor/js/valid-upload.js') }}"></script>
 <script src="{{ asset('vendor/swetalert2/sweetalert2.all.min.js') }}"></script>
-<script src="https://cdn.ckeditor.com/4.16.0/standard-all/ckeditor.js"></script>
+<script src="{{ asset('vendor/ckeditor5/ckeditor.js') }}"></script>
 <script src="{{ asset('vendor/jquery/jquery-ui.js') }}"></script>
 <script src="{{ asset('vendor/jquery/datepicker-es.js') }}"></script>
 
 <script>
     verify('data', 'file', 'name', 'authors', 'date', 'line', 'maxFileSize', 'progress', 'resetAll', 'uploadFile');
 
-    CKEDITOR.replace('description', {
+    ClassicEditor
+        .create(document.querySelector('#description'))
+        .catch(error => {
+            console.error(error);
+        });
+
+    /* ClassicEditor.replace('description', {
         uiColor: '#CCEAEE',
         language: 'es',
         width: '100%',
         height: 200,
-    });
+    }); */
 
     $(function() {
         $('#datepicker').datepicker($.datepicker.regional["es"]);

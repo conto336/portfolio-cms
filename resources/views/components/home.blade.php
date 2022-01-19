@@ -82,11 +82,13 @@
 
     <!-- Javascript -->
     <script src="{{ asset('vendor/js/custom/jquery-3.3.1.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> --}}
+    <script src="{{ asset('vendor/bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+   {{--  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+    </script> --}}
     {{-- <script src="{{ asset('vendor/js/custom/jquery-migrate-3.0.0.min.js') }}"></script> --}}
     <script src="{{ asset('vendor/js/custom/jquery.backstretch.min.js') }}"></script>
     <script src="{{ asset('vendor/js/custom/wow.min.js') }}"></script>

@@ -111,7 +111,7 @@
 
 @section('js')
 
-    <script src="https://cdn.ckeditor.com/4.16.0/standard-all/ckeditor.js"></script>
+    <script src="{{ asset('vendor/ckeditor5/ckeditor.js') }}"></script>
     <script>
         CKEDITOR.replace('description', {
             uiColor: '#CCEAEE',
@@ -119,7 +119,6 @@
             width: '100%',
             height: 200,
         });
-
     </script>
 
 @stop
