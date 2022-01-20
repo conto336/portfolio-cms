@@ -15,7 +15,7 @@ class StoreFileRequest extends FormRequest
      */
     public function authorize()
     {
-        if (Auth::user()->id === 1) {
+        if (Auth::user()->role === 'ADMIN' || Auth::user()->role == 'user') {
             return true;
         } else {
             return false;

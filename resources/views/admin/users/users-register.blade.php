@@ -8,12 +8,12 @@
 
 @section('content')
 
-    <div class="container text-center">
+    {{-- <div class="container text-center">
         <p class="text-success h4">
             Esta función aún no esta implementada, por favor contáctate con el desarrollador del sitio.
         </p>
-    </div>
-   {{--  <x-form-register-user /> --}}
+    </div> --}}
+    <x-form-register-user />
 
 @stop
 
@@ -31,7 +31,7 @@
 @stop
 
 @section('js')
-   {{--  <script>
+    <script>
         function show(p, p2, e) {
             const eye = document.getElementById(p);
             const password = document.getElementById(p2)
@@ -50,56 +50,5 @@
         show('password_one', 'password', 'eye');
         show('password_two', 'password_confirmation', 'eye_two')
     </script>
-    <script src="{{ asset('vendor/swetalert2/sweetalert2.all.min.js') }}"></script>
-
-    <script>
-        const password = document.getElementById("password");
-        const password_confirmation = document.getElementById("password_confirmation");
-        const btn_register = document.getElementById("registerUser");
-
-        password_confirmation.addEventListener("blur", () => {
-            if (password.value != password_confirmation.value) {
-                btn_register.disabled = true;
-                Swal.fire({
-                    title: "Contraseñas deben de ser iguales y debe tener al menos 8 caracteres",
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                });
-            }
-        });
-
-        password.addEventListener("change", () => {
-            if (password.value <= 8) {
-                btn_register.disabled = true;
-                Swal.fire({
-                    title: "Las contraseñas deben tener al menos 8 caracteres",
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                });
-            }
-        });
-
-        btn_register.addEventListener("click", (e) => {
-            e.prevenDefault();
-            Swal.fire({
-                title: `Esta función aún NO esta implementada. 
-                        Contáctate con el desarrollador del sitio`,
-                showClass: {
-                    popup: 'animate__animated animate__fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp'
-                }
-            });
-        })
-    </script> --}}
 
 @stop

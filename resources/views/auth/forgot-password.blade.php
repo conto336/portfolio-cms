@@ -1,5 +1,6 @@
-<x-auth>
+{{-- <x-auth>
     @section('title', 'Inicia sesión')
+
     <body class="login-page">
         <div class="login-box">
 
@@ -14,7 +15,7 @@
                     {{ session('status') }}
                 </div>
             @endif
-            
+
             <div class="card">
                 <div class="card-body">
                     <p class="text-center text-info">
@@ -22,12 +23,13 @@
                     </p>
 
                     <form method="POST" action="{{ route('password.email') }}">
+                        @csrf
                         <div class="form-group mt-3">
                             <label for="exampleInputEmail1">Correo electrónico</label>
                             <input type="email" class="form-control" aria-describedby="emailHelp"
                                 placeholder="Ingresa tu correo">
-                            {{-- <small id="emailHelp" class="form-text text-muted">No compartas tu correo con nadie
-                                más.</small> --}}
+                            <small id="emailHelp" class="form-text text-muted">No compartas tu correo con nadie
+                                más.</small>
                         </div>
 
                         <div class="text-center">
@@ -41,3 +43,5 @@
             </div>
         </div>
 </x-auth>
+ --}}
+ @extends('adminlte::auth.passwords.reset')

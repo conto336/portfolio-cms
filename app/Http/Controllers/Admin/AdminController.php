@@ -43,17 +43,21 @@ class AdminController extends Controller
             return redirect()->route('admin.users-register')->with(['danger' => "las contraseñas no son iguales"]);
         } else {
             if ($request->carrer == 'Electronica' || $request->carrer == 'Industrial' || $request->carrer == 'Geologia') {
-                $initials = $request['name'][0] . $request['lastname'][0];
-                User::create([
-                    'name' => $request['name'],
-                    'lastname' => $request['lastname'],
-                    'email' => $request['email'],
-                    'role' => $request['role'],
-                    'initials' => strtoupper($initials),
-                    'carrer' => strtoupper($request['carrer']),
-                    'carnet' => $request['carnet'],
-                    'password' => Hash::make($request['password']),
-                ]);
+                if ($request->role != 'ADMIN' || $request->role != 'user') {
+                    return redirect()->route('admin.users-register')->with(['danger' => "El rol no es el correcto"]);
+                } else {
+                    $initials = $request['name'][0] . $request['lastname'][0];
+                    User::create([
+                        'name' => $request['name'],
+                        'lastname' => $request['lastname'],
+                        'email' => $request['email'],
+                        'role' => $request['role'],
+                        'initials' => strtoupper($initials),
+                        'carrer' => strtoupper($request['carrer']),
+                        'carnet' => $request['carnet'],
+                        'password' => Hash::make($request['password']),
+                    ]);
+                }
 
                 return redirect()->route('admin.users-register')->with(['success' => 'El usuario ' . strtoupper($request->name) . ' con número de carnet: ' . $request->carnet . ' se ha registrado con exito']);
             } else {
@@ -103,7 +107,13 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->name === null) {
+            return redirect()->back()->with(['danger' => 'El nombre No puede estar vación']);
+        } else if ($request->password === null) {
+            return redirect()->back()->with(['danger' => 'La contraseña No puede estar vación']);
+        } else {
+            return $id;
+        }
     }
 
     /**

@@ -23,16 +23,16 @@
                     <a class="nav-link dropdown-toggle avatar" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}&amp;color=7F9CF5&amp;background=EBF4FF"
-                            class="user-image img-circle elevation-2" alt="CARLOS JERONIMO">
+                            class="user-image img-circle elevation-2" alt="{{ Auth::user()->name }}">
                         <span class="d-none d-md-inline"> 
                         
                     </a>
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                       @if (Auth::user()->id === 1)
+                      {{--  @if (Auth::user()->id === 1) --}}
                             <a class="dropdown-item" href="{{ route('admin.home') }}">
                                 Administación <i class="fas fa-users-cog"></i> 
                             </a>
-                        @endif
+                      {{--   @endif --}}
                             <a class="dropdown-item" href="{{ route('profile.show') }}">Perfil <i
                                     class="fa fa-user"></i>
                             </a>

@@ -22,7 +22,9 @@ class CreateNewUser implements CreatesNewUsers
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:30'],
-            'surname' => ['required', 'string', 'max:30'],
+            'lastname' => ['required', 'string', 'max:30'],
+            'role' => ['required', 'string', 'max:10'],
+            'initials' => ['required', 'string', 'max:3'],
             'carrer' => ['required', 'string', 'max:30'],
             'carnet' => ['required', 'numeric', 'min:8', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -32,7 +34,7 @@ class CreateNewUser implements CreatesNewUsers
 
         return User::create([
             'name' => strtoupper($input['name']),
-            'surname' => strtoupper($input['surname']),
+            'lastname' => strtoupper($input['lastname']),
             'carrer' => strtoupper($input['carnet']),
             'carnet' => $input['carnet'],
             'email' => $input['email'],

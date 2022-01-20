@@ -113,12 +113,11 @@
 
     <script src="{{ asset('vendor/ckeditor5/ckeditor.js') }}"></script>
     <script>
-        CKEDITOR.replace('description', {
-            uiColor: '#CCEAEE',
-            language: 'es',
-            width: '100%',
-            height: 200,
-        });
+        ClassicEditor
+            .create(document.querySelector('#description'))
+            .catch(error => {
+                console.error(error);
+            });
     </script>
 
 @stop

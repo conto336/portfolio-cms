@@ -1,32 +1,32 @@
 @extends('adminlte::auth.auth-page', ['auth_type' => 'login'])
 
-@php( $password_reset_url = View::getSection('password_reset_url') ?? config('adminlte.password_reset_url', 'password/reset') )
+@php($password_reset_url = View::getSection('password_reset_url') ?? config('adminlte.password_reset_url', '/forgot-password'))
 
 @if (config('adminlte.use_route_url', false))
-    @php( $password_reset_url = $password_reset_url ? route($password_reset_url) : '' )
+    @php($password_reset_url = $password_reset_url ? route($password_reset_url) : '')
 @else
-    @php( $password_reset_url = $password_reset_url ? url($password_reset_url) : '' )
+    @php($password_reset_url = $password_reset_url ? url($password_reset_url) : '')
 @endif
 
 @section('auth_header', __('adminlte::adminlte.password_reset_message'))
 
 @section('auth_body')
-    <form action="{{ $password_reset_url }}" method="post">
+    <form action="{{ route('password.email') }}" method="post">
         {{ csrf_field() }}
-
+        @csrf
         {{-- Token field --}}
-        <input type="hidden" name="token" value="{{ $token }}">
+        {{-- <input type="hidden" name="token" value="{{ $token }}"> --}}
 
         {{-- Email field --}}
         <div class="input-group mb-3">
             <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
-                   value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}" autofocus>
+                value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}" autofocus>
             <div class="input-group-append">
                 <div class="input-group-text">
                     <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
-            @if($errors->has('email'))
+            @if ($errors->has('email'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('email') }}</strong>
                 </div>
@@ -35,15 +35,14 @@
 
         {{-- Password field --}}
         <div class="input-group mb-3">
-            <input type="password" name="password"
-                   class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
-                   placeholder="{{ __('adminlte::adminlte.password') }}">
+            <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}"
+                placeholder="{{ __('adminlte::adminlte.password') }}">
             <div class="input-group-append">
                 <div class="input-group-text">
                     <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
-            @if($errors->has('password'))
+            @if ($errors->has('password'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('password') }}</strong>
                 </div>
@@ -53,14 +52,14 @@
         {{-- Password confirmation field --}}
         <div class="input-group mb-3">
             <input type="password" name="password_confirmation"
-                   class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
-                   placeholder="{{ trans('adminlte::adminlte.retype_password') }}">
+                class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
+                placeholder="{{ trans('adminlte::adminlte.retype_password') }}">
             <div class="input-group-append">
                 <div class="input-group-text">
                     <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
-            @if($errors->has('password_confirmation'))
+            @if ($errors->has('password_confirmation'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('password_confirmation') }}</strong>
                 </div>

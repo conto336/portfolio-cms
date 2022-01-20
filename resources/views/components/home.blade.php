@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
 
@@ -11,6 +11,7 @@
     @yield('metadata')
 
     <title>{{ config('app.name') }} - @yield('title')</title>
+
     <!-- CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
@@ -22,10 +23,12 @@
     <link rel="stylesheet" href="{{ asset('vendor/css/loader.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/css/table_wiki.css') }}">
     @yield('css')
+
     <!-- Favicon and touch icons -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="icon" sizes="189x256" href="{{ asset('favicon.ico') }}">
     <x-loader />
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6M2EM5XFC"></script>
     <script>
@@ -80,16 +83,11 @@
     </div>
     <!-- End wrapper -->
 
-    <!-- Javascript -->
+    <!-- Js -->
     <script src="{{ asset('vendor/js/custom/jquery-3.3.1.min.js') }}"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> --}}
     <script src="{{ asset('vendor/bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-   {{--  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script> --}}
-    {{-- <script src="{{ asset('vendor/js/custom/jquery-migrate-3.0.0.min.js') }}"></script> --}}
     <script src="{{ asset('vendor/js/custom/jquery.backstretch.min.js') }}"></script>
     <script src="{{ asset('vendor/js/custom/wow.min.js') }}"></script>
     <script src="{{ asset('vendor/js/custom/jquery.waypoints.min.js') }}"></script>

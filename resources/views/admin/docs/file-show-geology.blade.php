@@ -23,8 +23,8 @@
             overflow: hidden !important;
             vertical-align: middle !important;
             /* 
-                        word-wrap: break-word !important;
-                        max-width: 400px; */
+                            word-wrap: break-word !important;
+                            max-width: 400px; */
         }
 
         #electronic td {
@@ -94,13 +94,15 @@
                                                         class="fas fa-edit"></i></button>
                                             </form>
                                             <div class="mx-1"></div>
-                                            <form action="{{ route('admin.deleteFile', $geologia->document->id) }}"
-                                                method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm"><i
-                                                        class="fas fa-recycle"></i></button>
-                                            </form>
+                                            @if (Auth::user()->id === 1)
+                                                <form action="{{ route('admin.deleteFile', $geologia->document->id) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i
+                                                            class="fas fa-recycle"></i></button>
+                                                </form>
+                                            @endif
                                         </div>
                                     </div>
                                 </td>

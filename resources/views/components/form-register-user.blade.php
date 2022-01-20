@@ -19,7 +19,7 @@
         <form method="POST" action="{{ route('admin.register-user') }}">
             @csrf
             <div class="form-group">
-                <label for="name" value="{{ __('Name') }}">Nombre: </label>
+                <label for="name" value="{{ __('Name') }}">Nombres: </label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
@@ -116,7 +116,7 @@
                         <span class="input-group-text"><i class="fas fa-at"></i></span>
                     </div>
                     <select class="form-control" name="role" id="role">
-                        <option value="user">Usuario</option>
+                        <option value="user">Coordinador</option>
                         <option value="ADMIN">Admin</option>
                     </select>
                 </div>

@@ -24,7 +24,8 @@ class UserSeeder extends Seeder
             'carrer' => strtoupper('electronica'),
             'carnet' => 15047113,
             'email' => 'admin@admin',
-            'password' =>Hash::make('facultativa2021'),
+            'email_verified_at' => now(),
+            'password' => Hash::make('facultativa2021'),
         ]);
     }
 }
