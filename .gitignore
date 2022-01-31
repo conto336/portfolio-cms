@@ -5,6 +5,8 @@ public/.htaccess
 /public/storage
 /storage/*.key
 /vendor
+/.vscode
+node
 .env
 .env.backup
 .phpunit.result.cache
