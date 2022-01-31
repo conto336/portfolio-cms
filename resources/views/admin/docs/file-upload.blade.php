@@ -79,7 +79,7 @@
 @section('js')
 
 <script src="{{ asset('vendor/js/valid-upload.js') }}"></script>
-<script src="{{ asset('vendor/swetalert2/sweetalert2.all.min.js') }}"></script>
+{{-- <script src="{{ asset('vendor/swetalert2/sweetalert2.all.min.js') }}"></script> --}}
 <script src="{{ asset('vendor/ckeditor5/ckeditor.js') }}"></script>
 <script src="{{ asset('vendor/jquery/jquery-ui.js') }}"></script>
 <script src="{{ asset('vendor/jquery/datepicker-es.js') }}"></script>

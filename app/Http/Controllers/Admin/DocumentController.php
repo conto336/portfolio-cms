@@ -9,6 +9,7 @@ use App\Models\Electronic;
 use App\Models\Geology;
 use App\Models\Industrial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -76,6 +77,7 @@ class DocumentController extends Controller
             'original_name' => $request->file('file')->getClientOriginalName(),
             'carrer' => $request->carrer,
             'type' => $request->file('file')->extension(),
+            'upload_by' => Auth::user()->name,
             'date' => $request->date,
             'keywords' => $request->name . ',' . $request->carrer . ',' . $request->category . ',' . $request->authors . ',' . $request->line,
         ]);

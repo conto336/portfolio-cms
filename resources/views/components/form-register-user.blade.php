@@ -116,7 +116,7 @@
                         <span class="input-group-text"><i class="fas fa-at"></i></span>
                     </div>
                     <select class="form-control" name="role" id="role">
-                        <option value="user">Coordinador</option>
+                        <option selected value="coordinador">Coordinador</option>
                         <option value="ADMIN">Admin</option>
                     </select>
                 </div>

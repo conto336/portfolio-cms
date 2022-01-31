@@ -198,7 +198,7 @@
                 <div class="col-md-6 section-3-box wow fadeInLeft">
                     <div class="row">
                         <div class="col-md-9">
-                            <h3>MSc. Francisco</h3>
+                            <h3>MSc. Francisco Espinoza</h3>
                             <p>
                                 <strong>Coordinador de Ingeniería Geológia</strong> <i class="fas fa-dice-d20"></i>
                             </p>

@@ -79,9 +79,20 @@
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-cogs"></i></span>
                 </div>
                 <select class="form-control" name="carrer">
-                    <option value="Electronica">Ingeniería Electrónica</option>
-                    <option value="Industrial">Ingeniería Industrial</option>
-                    <option value="Geologica">Ingeniería Geológica</option>
+                    @if (Auth::user()->role === 'coordinador' && Auth::user()->carrer === 'INDUSTRIAL')
+                        <option selected value="Industrial">Ingeniería Industrial</option>
+                    @endif
+                    @if (Auth::user()->role === 'coordinador' && Auth::user()->carrer === 'ELECTRONICA')
+                        <option selected value="Electronica">Ingeniería Electrónica</option>
+                    @endif
+                    @if (Auth::user()->role === 'coordinador' && Auth::user()->carrer === 'GEOLOGIA')
+                        <option selected value="Geologica">Ingeniería Geológica</option>
+                    @endif
+                    @if (Auth::user()->role === 'ADMIN')
+                        <option value="Electronica">Ingeniería Electrónica</option>
+                        <option value="Industrial">Ingeniería Industrial</option>
+                        <option value="Geologica">Ingeniería Geológica</option>
+                    @endif
                 </select>
             </div>
             @error('carrer')

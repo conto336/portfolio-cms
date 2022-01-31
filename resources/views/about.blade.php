@@ -1,4 +1,52 @@
-<!DOCTYPE HTML>
+<x-home>
+
+    @section('title', 'Acerca de esta página')
+
+    <div class="section-2-container section-container section-container-gray-bg" id="section-2">
+        <div class="container">
+            <div class="row">
+                <div class="col section-2 section-description wow fadeIn">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 section-2-box wow fadeInLeft">
+                    <h3>Acerca de esta página</h3>
+                    <br>
+                    <p class="medium-paragraph">
+                        Esta sitio fue desarrollado como un repositorio para poder almacenar los documentos de
+                        graduación de las carreras de ingeniería electrónica, ingeniería industrial e ingeniería
+                        geológica
+                    </p>
+                    <a class="btn btn-primary btn-customized" href="/" role="button">
+                        <i class="fas fa-home"></i> inicio
+                    </a>
+                </div>
+                <div class="col-4 section-2-box wow fadeInUp">
+                    <img src="{{ asset('images/about-us.jpg') }}" alt="about-us">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-3-container section-container section-container-gray-bg" id="section-3">
+        <div class="container">
+            <div class="row">
+                <div class="col section-2 section-description wow fadeIn">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 section-2-box wow fadeInLeft">
+                    <p class="medium-paragraph">
+                        Este sito esta desarrollado con el Framework <strong>Laravel {{ app()->version() }}</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</x-home>
+
+{{-- <!DOCTYPE HTML>
 <html>
 
 <head>
@@ -224,4 +272,4 @@
     <script src="{{ asset('vendor/js/main.js') }}"></script>
 </body>
 
-</html>
+</html> --}}

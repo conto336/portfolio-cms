@@ -17,8 +17,8 @@ class UserSeeder extends Seeder
     public function run()
     {
         $userAdmin = DB::table('users')->insert([
-            'name' => strtoupper('Carlos Jerónimo'),
-            'lastname' => strtoupper('López Conto'),
+            'name' => 'Carlos Jerónimo',
+            'lastname' => 'López Conto',
             'role' => strtoupper('admin'),
             'initials' => strtoupper('cc'),
             'carrer' => strtoupper('electronica'),

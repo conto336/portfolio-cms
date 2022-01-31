@@ -18,6 +18,7 @@ class CreateDocumentsTable extends Migration
             $table->longText('name');
             $table->text('original_name');
             $table->string('carrer', 25);
+            $table->string('upload_by');
             $table->string('type');
             $table->string('date');
             $table->text('keywords');
