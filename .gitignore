@@ -1,12 +1,8 @@
 /node_modules
 /public/hot
-/public/.well-known
-public/.htaccess
 /public/storage
 /storage/*.key
 /vendor
-/.vscode
-node
 .env
 .env.backup
 .phpunit.result.cache
@@ -15,3 +11,5 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+/.idea
+/.vscode

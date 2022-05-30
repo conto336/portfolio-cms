@@ -1,47 +1,34 @@
-{{-- <x-auth>
-    @section('title', 'Inicia sesión')
+<x-guest-layout>
+    <x-jet-authentication-card>
+        <x-slot name="logo">
+            <x-jet-authentication-card-logo />
+        </x-slot>
 
-    <body class="login-page">
-        <div class="login-box">
-
-            <div class="login-logo">
-                <p><b>Departamento</b> de <br> Tecnología</p>
-            </div><!-- /.login-logo -->
-
-            <p class="login-box-msg">Restablecer contraseña</p>
-
-            @if (session('status'))
-                <div class="text-primary">
-                    {{ session('status') }}
-                </div>
-            @endif
-
-            <div class="card">
-                <div class="card-body">
-                    <p class="text-center text-info">
-                        {{ __('Ingresa tu correo electrónico para restablecer la contraseña.') }}
-                    </p>
-
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-                        <div class="form-group mt-3">
-                            <label for="exampleInputEmail1">Correo electrónico</label>
-                            <input type="email" class="form-control" aria-describedby="emailHelp"
-                                placeholder="Ingresa tu correo">
-                            <small id="emailHelp" class="form-text text-muted">No compartas tu correo con nadie
-                                más.</small>
-                        </div>
-
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('Restablecer') }}
-                            </button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
+        <div class="mb-4 text-sm text-gray-600">
+            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
         </div>
-</x-auth>
- --}}
- @extends('adminlte::auth.passwords.reset')
+
+        @if (session('status'))
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ session('status') }}
+            </div>
+        @endif
+
+        <x-jet-validation-errors class="mb-4" />
+
+        <form method="POST" action="{{ route('password.email') }}">
+            @csrf
+
+            <div class="block">
+                <x-jet-label for="email" value="{{ __('Email') }}" />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                <x-jet-button>
+                    {{ __('Email Password Reset Link') }}
+                </x-jet-button>
+            </div>
+        </form>
+    </x-jet-authentication-card>
+</x-guest-layout>

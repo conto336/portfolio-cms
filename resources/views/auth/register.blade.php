@@ -14,25 +14,6 @@
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
-            <div>
-                <x-jet-label for="surname" value="{{ __('Surname') }}" />
-                <x-jet-input id="surname" class="block mt-1 w-full" type="text" name="surname" :value="old('surname')" required autofocus autocomplete="surname" />
-            </div>
-
-            <div>
-                <x-jet-label for="surname" value="{{ __('Carrera') }}" />
-                <select class="form-control" name="carrer">
-                    <option value="Electronica">Ingeniería Electrónica</option>
-                    <option value="Industrial">Ingeniería Industrial</option>
-                    <option value="Geologia">Ingeniería Geológica</option>
-                </select>
-            </div>
-
-            <div>
-                <x-jet-label for="carnet" value="{{ __('Carnet') }}" />
-                <x-jet-input id="carnet" class="block mt-1 w-full" type="text" name="carnet" :value="old('carnet')" required autofocus autocomplete="carnet" />
-            </div>
-
             <div class="mt-4">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />

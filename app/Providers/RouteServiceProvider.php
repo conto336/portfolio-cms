@@ -17,8 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    //public const HOME = '/dashboard';
-    public const HOME = '/';
+    public const HOME = '/dashboard';
 
     /**
      * The controller namespace for the application.
@@ -45,17 +44,10 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
-                ->prefix('admin/deptecnologia')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/admin.php'));
-
-            Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
-      
     }
-
 
     /**
      * Configure the rate limiters for the application.

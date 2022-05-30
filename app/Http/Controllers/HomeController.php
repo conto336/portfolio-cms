@@ -2,141 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Document;
-use App\Models\Electronic;
-use App\Models\Geology;
-use App\Models\Industrial;
+use App\Models\Project;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
-use PhpParser\Comment\Doc;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    public function index(Request $request)
+    public function welcome()
     {
+        $location = "https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d1746.9229993366318!2d-86.1035980041176!3d11.90316124392252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x8f740579a2e31307%3A0xd9f8edf629e0ba97!2sNiquinohomo!3m2!1d11.903788599999999!2d-86.10184439999999!5e1!3m2!1ses-419!2sni!4v1631292915636!5m2!1ses-419!2sni";
+        $me = User::find(1);
+        $projects = Project::all();
 
-        if ($request->input('query')) {
-
-            $name = $request->input('query');
-
-            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
-                ->get();
-
-            return view('filter', compact('query', 'name'));
-        }
-
-        return view('index');
+        return view('welcome-v-1', compact('me', 'location', 'projects'));
     }
 
-    public function show($name, $id, Request $request)
+    public function details($slug)
     {
-        if ($request->input('query')) {
+        $project = Project::where('slug', '=', $slug)->first();
 
-            $name = $request->input('query');
-
-            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
-                ->get();
-
-            return view('filter', compact('query', 'name'));
+        if ($project) {
+            return view("details-proyect", compact('project'));
         }
 
-        $doc = Document::findOrFail($id);
-        if ($doc->carrer === 'Electronica') {
-            $carrer = 'electronica';
-            return view('components.show-file', compact('doc', 'carrer'));
-        }
-        if ($doc->carrer === 'Geologica') {
-            $carrer = 'geologia';
-            return view('components.show-file', compact('doc', 'carrer'));
-        }
-        if ($doc->carrer === 'Industrial') {
-            $carrer = 'industrial';
-            return view('components.show-file', compact('doc', 'carrer'));
-        }
-    }
-    public function showLines(Request $request)
-    {
-        return Document::where("keywords", 'LIKE', '%' . $request->lineas . '%')->get();
+        return abort(404);
     }
 
-    public function about()
+    public function index()
     {
-        return view('about');
+        $admin = User::find(1);
+
+        return view('dashboard', compact('admin'));
     }
-
-    public function homeLibrary(Request $request)
-    {
-        if ($request->input('query')) {
-
-            $name = $request->input('query');
-
-            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
-                ->get();
-
-            return view('filter', compact('query', 'name'));
-        }
-
-        return view('library.home');
-    }
-
-    /**Archivos de Ingenieria Electronica */
-    public function electronicFiles(Request $request)
-    {
-        if ($request->input('query')) {
-
-            $name = $request->input('query');
-
-            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
-                ->get();
-
-            return view('filter', compact('query', 'name'));
-        }
-
-        $docs = Document::where('carrer', 'Electronica')->paginate(4);
-
-        return view('library.electronica.files', compact('docs'));
-    }
-
-    /**Archivos de Ingenieria Electronica */
-
-    /**Archivos de Ingenieria Industrial */
-    public function industrialFiles(Request $request)
-    {
-        if ($request->input('query')) {
-
-            $name = $request->input('query');
-
-            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
-                ->get();
-
-            return view('filter', compact('query', 'name'));
-        }
-
-        $docs = Document::where('carrer', 'Industrial')->paginate(4);
-
-        return view('library.industrial.files', compact('docs'));
-    }
-
-    /**Archivos de Ingenieria Industrial */
-
-
-    /**Archivos de Ingenieria Geologia */
-    public function geologyFiles(Request $request)
-    {
-        if ($request->input('query')) {
-
-            $name = $request->input('query');
-
-            $query = Document::where('keywords', 'LIKE', '%' . $name . '%')
-                ->get();
-
-            return view('filter', compact('query', 'name'));
-        }
-
-        $docs = Document::where('carrer', 'Geologica')->paginate(4);
-
-        return view('library.geologia.files', compact('docs'));
-    }
-    /**Archivos de Ingenieria Geologia */
 }

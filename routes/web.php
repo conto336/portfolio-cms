@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\DocumentController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\OnlyCategoriesController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,25 +16,27 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('register', function (){ abort(404); });
+Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
 
+Route::get('project/{slug}', [HomeController::class, 'details'])->name('proyect');
 
-Route::get('about', [HomeController::class, 'about'])->name('about');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
-Route::get('carreras/', [HomeController::class, 'homeLibrary'])->name('library');
+    Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
 
-/**Rutas del ELectronica */
-Route::get('carrera/ingenieria electronica/', [HomeController::class, 'electronicFiles'])->name('electronicFiles');
+    Route::get('/create-project', [ProjectController::class, 'create'])->name('create.project');
 
-/**Rutas de Industrial */
-Route::get('carrera/ingenieria industrial/', [HomeController::class, 'industrialFiles'])->name('industrialFiles');
+    Route::post('/create-project', [ProjectController::class, 'store'])->name('create.project.store');
 
-/**Rutas de Geologia */
-Route::get('carrera/ingenieria geologica/', [HomeController::class, 'geologyFiles'])->name('geologyFiles');
+    Route::get('/edit-project/id={id}/slug={slug}', [ProjectController::class, 'edit'])->name('create.project.edit');
 
-Route::get('archivos/{nombre}&{id}', [HomeController::class, 'show'])->name('showFile');
+    Route::put('/update-project={project}', [ProjectController::class, 'update'])->name('create.project.update');
 
-Route::get('archivos/carrera={carrera}/lineas={lineas}', [HomeController::class, 'showLines'])->name('showLines');
-
+    Route::put('update-profile-user={user}', [UserController::class, 'update'])->name('update');
+});
