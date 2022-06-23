@@ -69,12 +69,11 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        return $request->all();
         if ($request->password === null) {
             $user->update($request->except('password'));
-            return redirect()->back()->with(['success' => 'Se ha actualizo la informacion del perfil']);
+        } else {
+            $user->update($request->all());
         }
-        $user->update($request->all());
         return redirect()->back()->with(['success' => 'Se ha actualizo la informacion del perfil']);
     }
 

@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link href="{{ asset('v-1/assets/css/style.css') }}" rel="stylesheet">
     @yield('css')
 </head>
@@ -120,7 +121,6 @@
     <script src="{{ asset('v-1/assets/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('v-1/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('v-1/assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
-    <script src="{{ asset('v-1/assets/vendor/php-email-form/validate.js') }}"></script>
     <script src="{{ asset('v-1/assets/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
     <script src="{{ asset('v-1/assets/vendor/counterup/counterup.min.js') }}"></script>
     <script src="{{ asset('v-1/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
@@ -128,7 +128,9 @@
     <script src="{{ asset('v-1/assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('v-1/assets/vendor/typed.js/typed.min.js') }}"></script>
     <script src="{{ asset('v-1/assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('animatejs/anime.min.js') }}"></script>
     <script src="{{ asset('v-1/Waves/waves.min.js') }}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <!-- Template Main JS File -->
     <script src="{{ asset('v-1/assets/js/main.js') }}"></script>
 
@@ -147,6 +149,7 @@
             });
         });
     </script>
+    @yield('js')
 </body>
 
 </html>

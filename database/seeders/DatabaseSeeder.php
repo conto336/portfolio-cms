@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             'job' => 'Backend Developer',
             'age' => '24',
             'location' => 'Nicaragua',
+            'about' => '¡Hola!👋 mi nombre es Carlos Conto, soy Ingeniero en Electrónica y Desarrollador Web. Soy una persona entusiasta, perseverante y siempre con ganas de aprender muchas cosas nuevas y en constante aprendizaje para mejorar mis habilidades.',
             'git' => 'https://github.com/conto336',
             'link' => 'https://linkedin.com/in/carlos-j-conto336',
             'twitter' => '@Carlos_J_Conto',
